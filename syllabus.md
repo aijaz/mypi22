@@ -1,33 +1,36 @@
-# Syllabus & Lesson plan
+# Syllabus & Lesson Plan
+
+We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e/) as the course textbook. The syllabus (mostly) follows the order of topics as introduced in the book. I will be using different examples during class so you can use the book to study the topics in greater detail, and get a better understanding of them.
 
 ## Week 1
 
 * Computers are stupid
-	* order
+	* Order
 	* Explicit instructions 
-* Using the REPL
+* Launching and using the REPL
 	* Your first Python Program in the repl
 	* Print(“hello world”)
 	* Now you’re a programmer
 * Pycharm
-	* launch
-	* New project without venv.   
+	* Launch
+	* Creating a new project.
 	* Type in hello_world.py 
+	* How to run the current file
 	* Add a second print statement 
-* What happens when u run a program
+* What happens when you run a program
 * Operators and objects
-	* objects are things
+	* Objects are things
 * Functions
-	* verbs.  Actions
+	* Verbs. Actions.
 * Saywhat.py
 
 --- 
 
 * Variables
 	* Use a sheet of paper, folded up
-	* two sheets give a sheet to each student
-	* Ask student value
-	* Use wrong name: cas 
+	* Two sheets. Give a sheet to each student
+	* Ask student to unfold and read the value
+	* Use wrong name: Computers are stupid
 	* Update variable repeat
 	* Message = “hw” print message 
 	* Try invalid variable names
@@ -36,29 +39,26 @@
 	    * Typos
 	* Assignment 
 	* Lookup
+	* Give a student a blank sheet. None.
 	* Multiple assignment
 * Strings
 * Operators 
-	* + print “h “ + “w” string
+	* + print “hello “ + “world” string
+	* Introduce Integers
 	* Int operators
-* Functions title, upper lower
-* use pycharm
-* “H w”.title()
+* Functions - title(), upper(), and lower()
+* Use pycharm
+* “Hello world”.title()
 * Using variables in strings: f strings
 * New lines in strings
 * Quotes in strings
 * Double and triple quoted strings 
 * Comments 
-	* why?
-* User Input 
-* *Homework*
-	* read
-	    * variable names
-	    * String functions
-	    * F strings
-	* Write
-	    * Babyshark.py
-	    * Write a program that asks you to input a string. Once you input a string it should print out that string, followed by “shark! Do do do, do do do!” 3 times followed by the string, and then “shark”
+	* why use comments?
+* Reading User Input 
+* **Homework**
+    * Babyshark.py
+    * Write a program that asks you to input a string. Once you input a string it should print out that string, followed by “shark! Do do do, do do do!” 3 times followed by the string, and then “shark”
 ```
 	What is your name? 
 	Baby
