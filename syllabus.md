@@ -169,12 +169,12 @@ for v in range(1, n):
   s += v
 
 print(f”the sum of the first n integers is {s}”)
-```
-	* Using range to make a list of numbers
-```
+
+	# Using range to make a list of numbers
+	# Working with parts of a list
+
 numbers = list(range(1, 5))
 ```
-	* Working with parts of a list
 4. Conditionals
     * If statements
     * Using conditionals with lists
