@@ -104,7 +104,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     * Have another student hold onto it as well
     * Update the value in one of the folded sheets 
     * Ask each student to read out their value written on the paper
-    * Explain that the attings are refernces and that the students are variable
+    * Explain that the strings are references and that the students are variables
     * Making a copy with `l2 = list(l1)`
     * Get a second blank book and copy the values from one book to another
     * Repeat the exercise with lists of lists (books containing books)
