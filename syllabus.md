@@ -9,7 +9,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 	* Explicit instructions 
 * Launching and using the REPL
 	* Your first Python Program in the repl
-	* Print(“hello world”)
+	* Print("hello world")
 	* Now you’re a programmer
 * Pycharm
 	* Launch
@@ -32,7 +32,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 	* Ask student to unfold and read the value
 	* Use wrong name: Computers are stupid
 	* Update variable repeat
-	* Message = “hw” print message 
+	* Message = "hw" print message 
 	* Try invalid variable names
 	    * starting with number
 	    * With space
@@ -43,12 +43,12 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 	* Multiple assignment
 * Strings
 * Operators 
-	* print “hello “ + “world” string
+	* print "hello " + "world" string
 	* Introduce Integers
 	* Int operators
 * Functions - title(), upper(), and lower()
 * Use pycharm
-* “Hello world”.title()
+* "Hello world".title()
 * Using variables in strings: f strings
 * New lines in strings
 * Quotes in strings
@@ -58,7 +58,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Reading User Input 
 * **Homework**
     * Babyshark.py
-    * Write a program that asks you to input a string. Once you input a string it should print out that string, followed by “shark! Do do do, do do do!” 3 times followed by the string, and then “shark”
+    * Write a program that asks you to input a string. Once you input a string it should print out that string, followed by "shark! Do do do, do do do!" 3 times followed by the string, and then "shark"
 ```
 	What is your name? 
 	Baby
@@ -76,7 +76,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Changing, adding, and removing elements
     * modifying elements 
     * Adding elements `append`
-    * `insert(0, “abc”)`
+    * `insert(0, "abc")`
     * `l = things.pop()`
     * `a = things.pop(3)`
     * `things.del(3)`
@@ -112,9 +112,9 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     1. Make a list of your favorite sports in order of preference (most favorite first)
     2. Print the list
     3. Print the list in reverse order
-    4. You learn about a new game called “7 tiles” and suddenly it’s your favorite game. Modify the list so that this is new game is now in the first spot, with everything else moving down a spot
-    5. After a week, “7 tiles” moves to the second spot but the third most favorite game moves to the top spot. Modify the list accordingly. 
-    6. After another week, you get bored of “7 tiles altogether” and remove it from your list altogether. Everything else stays the same. Modify the list accordingly
+    4. You learn about a new game called "7 tiles" and suddenly it’s your favorite game. Modify the list so that this is new game is now in the first spot, with everything else moving down a spot
+    5. After a week, "7 tiles" moves to the second spot but the third most favorite game moves to the top spot. Modify the list accordingly. 
+    6. After another week, you get bored of "7 tiles altogether" and remove it from your list altogether. Everything else stays the same. Modify the list accordingly
     7. In a few weeks we’ll be making a downhill skiing game. In this game the player will have to ski  between obstacles. Each horizontal row across the slope has 15 spots. Each spot can either have an obstacle or be empty. The goal of the game is to have the player ski through the empty spots without hitting an obstacle. Each obstacle can be a rock or a snowman. You may use strings or integers to represent an obstacle or  an empty space. 
 	    1. create a data structure for a row. 
 	    2. Assuming each screen has 20 rows, create a data structure for a screen. 
@@ -139,16 +139,16 @@ for thing in things:
 * Statements after a for loop
 
 ```python
-for person in (“Aijaz”, “Adel”, “Ayesha”):
-  print(f”Hello, {person}”)
+for person in ("Aijaz", "Adel", "Ayesha"):
+  print(f"Hello, {person}")
 
-print(“It’s good to meet all of you.”)
+print("It’s good to meet all of you.")
 
 the_sum = 0
 for n in (1, 2, 3, 4):
   the_sum = the_sum + n
 
-print(f”The sum of the first 4 integers is {the_sum}”)
+print(f"The sum of the first 4 integers is {the_sum}")
 ```
 
 * 	blank line optional
@@ -162,7 +162,7 @@ s = 0
 for v in range(1, 4):
   s = s + v
 
-print(f”the sum of the first 4 integers is {s}”)
+print(f"the sum of the first 4 integers is {s}")
 
 #################################################
 
@@ -171,7 +171,7 @@ n = 4
 for v in range(1, n):
   s = s + v
 
-print(f”the sum of the first n integers is {s}”)
+print(f"the sum of the first n integers is {s}")
 
 #################################################
 
@@ -180,7 +180,7 @@ n = 4
 for v in range(1, n):
   s += v
 
-print(f”the sum of the first n integers is {s}”)
+print(f"the sum of the first n integers is {s}")
 ```
 
 * Using range to make a list of numbers
