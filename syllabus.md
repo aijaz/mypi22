@@ -43,7 +43,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 	* Multiple assignment
 * Strings
 * Operators 
-	* + print “hello “ + “world” string
+	* print “hello “ + “world” string
 	* Introduce Integers
 	* Int operators
 * Functions - title(), upper(), and lower()
@@ -96,10 +96,18 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     * `l1.append(l2)`
     * List data structures
 	    * [x,y]
-	    * Would never add or delete, so use tuple instead 
+	    * If you never need to add or delete, use tuples instead 
 * List copy references 
-    * references
+    * References
+    * Make a "book" of folded sheets of paper
+    * Have one student "hold" it with a string
+    * Have another student hold onto it as well
+    * Update the value in one of the folded sheets 
+    * Ask each student to read out their value written on the paper
+    * Explain that the attings are refernces and that the students are variable
     * Making a copy with `l2 = list(l1)`
+    * Get a second blank book and copy the values from one book to another
+    * Repeat the exercise with lists of lists (books containing books)
 * *Homework* 
     1. Make a list of your favorite sports in order of preference (most favorite first)
     2. Print the list
@@ -181,6 +189,9 @@ print(f”the sum of the first n integers is {s}”)
 ```python
 numbers = list(range(1, 5))
 ```
+
+* **Homework**
+
 
 ## Week 4. Conditionals
 * If statements
