@@ -88,7 +88,21 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     * Reversing a list with `reverse()`
 * `n = len(things)` 
 * Indexes
+    * index 0 refers to the first item in the list
+    * It's this way in most computer languages
+    * Think of an index as the _distance from the first item_
+    * The index of the last item is the length of the list - 1
+```python
+my_list = [10, 20, 30]
+l = len(my_list)
+my_list[0]
+my_list[1]
+my_list[2]
+my_list[3] # this should throw an error. Talk about this
+```
+    * You can also use negative indexes. `-1` for the last item, and so on
     * `li = things[-1]`
+    * Why `-1`?  Because `-0` doesn't make sense.
 * Tuples
     * Parens 
     * Safety check
@@ -135,7 +149,7 @@ for thing in things:
 
 * Step through loop
 * Multiple statements in a block
-    * 2 print statements
+    - 2 print statements
 * Statements after a for loop
 ```python
 for person in ("Aijaz", "Adel", "Ayesha"):
@@ -153,10 +167,10 @@ print(f"The sum of the first 4 integers is {the_sum}")
 * Blank line optional
 * Avoiding Indentation Errors
 * Making Numerical Lists
-    * Many reasons exist: games, measurements, etc.
-    * Range
-        - Two parameters: start_at and stop_before
-        - Never includes the second parameter
+    - Many reasons exist: games, measurements, etc.
+    - Range
+        + Two parameters: start_at and stop_before
+        + Never includes the second parameter
 ```python
 s = 0
 for v in range(1, 4):
@@ -183,32 +197,34 @@ for v in range(1, n):
 print(f"the sum of the first {n - 1} integers is {s}")
 ```
 
-        - `range` with 1 parameter
+        + `range` with 1 parameter
 ```python
 for n in range(5):
     print(n)
 ```
-        - `range` with 1 parameter - starts at 0, stops at parameter - 1
+        + `range` with 1 parameter - starts at 0, stops at parameter - 1
     Works well with list indexes
 ```python
 odds = [1, 3, 5, 7, 9]
 for f in range(len(odds)):
     print(odds[f] + 1)
 ``` 
-        - `range` with 3 parameter: increment by parameter 3 instead of 1
+        + `range` with 3 parameter: increment by parameter 3 instead of 1
 ```python
 for v in range(1, 10, 3):
     print(v)
 ```
-        - Using `range` to create lists
+        + Using `range` to create lists
 ```python
 l = list(range(1, 10, 3))
 ```
+
 * Functions on lists
     - `min()`
     - `max()`
     - `sum()`
     - `len()`
+
 * List comprehensions
     - Elegant shorthand for the creation of a new list and a `for` loop.
 ```pycon
