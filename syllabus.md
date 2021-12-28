@@ -10,7 +10,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Launching and using the REPL
     * Your first Python Program in the repl
     * Print("hello world")
-    * Now you’re a programmer
+    * Now you're a programmer
 * Pycharm
     * Launch
     * Creating a new project.
@@ -97,7 +97,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     * `l = things.pop()`
     * `a = things.pop(3)`
     * `things.del(3)`
-    * `things.remove(‘a thing’)`
+    * `things.remove('a thing')`
     * `l1.extend(l2)` 
 * Organizing a list
     * Sort permanently with `sort`
@@ -127,10 +127,10 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     1. Make a list of your favorite sports in order of preference (most favorite first)
     2. Print the list
     3. Print the list in reverse order
-    4. You learn about a new game called "7 tiles" and suddenly it’s your favorite game. Modify the list so that this is new game is now in the first spot, with everything else moving down a spot
+    4. You learn about a new game called "7 tiles" and suddenly it's your favorite game. Modify the list so that this is new game is now in the first spot, with everything else moving down a spot
     5. After a week, "7 tiles" moves to the second spot but the third most favorite game moves to the top spot. Modify the list accordingly. 
     6. After another week, you get bored of "7 tiles altogether" and remove it from your list altogether. Everything else stays the same. Modify the list accordingly
-    7. In a few weeks we’ll be making a downhill skiing game. In this game the player will have to ski  between obstacles. Each horizontal row across the slope has 15 spots. Each spot can either have an obstacle or be empty. The goal of the game is to have the player ski through the empty spots without hitting an obstacle. Each obstacle can be a rock or a snowman. You may use strings or integers to represent an obstacle or  an empty space. 
+    7. In a few weeks we'll be making a downhill skiing game. In this game the player will have to ski  between obstacles. Each horizontal row across the slope has 15 spots. Each spot can either have an obstacle or be empty. The goal of the game is to have the player ski through the empty spots without hitting an obstacle. Each obstacle can be a rock or a snowman. You may use strings or integers to represent an obstacle or  an empty space. 
         1. create a data structure for a row. 
         2. Assuming each screen has 20 rows, create a data structure for a screen. 
         3. Assuming each row has 3 obstacles, populate each row with obstacles placed at random locations. 
@@ -159,7 +159,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     for person in ("Aijaz", "Adel", "Ayesha"):
         print(f"Hello, {person}")
         
-    print("It’s good to meet all of you.")
+    print("It's good to meet all of you.")
         
     the_sum = 0
     for n in (1, 2, 3, 4):
@@ -324,32 +324,32 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     ```python
     team = input("What is your favorite NBA team?")
     if team == "Bulls":
-        print("They’re my favorite team, too!")
+        print("They're my favorite team, too!")
     else:
-        print("They’re not as good as the Bulls, NGL")
+        print("They're not as good as the Bulls, NGL")
     ```
 
 * Assignment vs Test for equality 
 
     ```python
-    team = ‘Bulls’
-    team == ‘Bulls’
-    team == ‘Nuggets’
+    team = 'Bulls'
+    team == 'Bulls'
+    team == 'Nuggets'
     ```
 
 * Syntactic VS Semantic equality
 
     ```python
-    team = ‘Lakers’
-    team == ‘Lakers’
-    team == ‘lakers’
+    team = 'Lakers'
+    team == 'Lakers'
+    team == 'lakers'
     lower(team) 
-    lower(team) == ‘lakers’
-    team = ‘LAKERS’
-    lower(team) == ‘lakers’
-    team = ‘lAkERs’
-    lower(team) == ‘lakers’
-    team == ‘lAkERs’
+    lower(team) == 'lakers'
+    team = 'LAKERS'
+    lower(team) == 'lakers'
+    team = 'lAkERs'
+    lower(team) == 'lakers'
+    team == 'lAkERs'
     ```
 
 * Testing for inequality
@@ -357,9 +357,9 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     ```python
     team = input("What is your favorite NBA team?")
     if team != "Bulls":
-        print("They’re not as good as the Bulls, NGL")
+        print("They're not as good as the Bulls, NGL")
     else:
-        print("They’re my favorite team, too!")
+        print("They're my favorite team, too!")
     ```
 
 * Testing numbers
