@@ -388,6 +388,13 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
         print("You're a teenaged adult")
     else:
         print("You're an adult")
+        
+    # no else block
+    
+    if age == 16:
+        print("You can drive!")
+    elif age == 18:
+        print("You can vote!")
     ```
 
 * Checking multiple conditions
@@ -406,8 +413,14 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
         if age < 20 and age > 17: 
             print("You are a teenaged adult.")
         ```
-
-* Using conditionals with lists
+* Everything between the `if` and the `:` is called a Boolean expression
+* A boolean expression can be composed of other Boolean expressions (like we just saw with `or` and `and`
+* Other boolean tests
+    - `"Feb" in ["Jan", "Feb", "Mar"]`
+    - `"Jun" in ["Jan", "Feb", "Mar"]`
+    - `"feb" not in ["Jan", "Feb", "Mar"]`
+    - `"ear" in "hearing"`
+* Describe the modulo operator (`%`)
 * You can also limit which items make it into a comprehension:
 
     ```python
