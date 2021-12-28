@@ -1,4 +1,4 @@
-# Syllabus & Lesson Plan 9
+# Syllabus & Lesson Plan
 
 We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e/) as the course textbook. The syllabus (mostly) follows the order of topics as introduced in the book. I will be using different examples during class so you can use the book to study the topics in greater detail, and get a better understanding of them.
 
@@ -72,23 +72,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 ## Week 2: Introduction to Lists and Tuples
 
 * What is a list
-* Accessing elements
-    * index positions
-* Changing, adding, and removing elements
-    * modifying elements 
-    * Adding elements `append`
-    * `insert(0, "abc")`
-    * `l = things.pop()`
-    * `a = things.pop(3)`
-    * `things.del(3)`
-    * `things.remove(‘a thing’)`
-    * `l1.extend(l2)` 
-* Organizing a list
-    * Sort permanently with `sort`
-    * Get a sorted copy with `sorted()`
-    * Reversing a list with `reverse()`
-* `n = len(things)` 
-* Indexes
+* Accessing elements with indexes
     * index 0 refers to the first item in the list
     * It's this way in most computer languages
     * Think of an index as the _distance from the first item_
@@ -106,6 +90,20 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     * You can also use negative indexes. `-1` for the last item, and so on
     * `li = things[-1]`
     * Why `-1`?  Because `-0` doesn't make sense.
+* Changing, adding, and removing elements
+    * modifying elements 
+    * Adding elements `append`
+    * `insert(0, "abc")`
+    * `l = things.pop()`
+    * `a = things.pop(3)`
+    * `things.del(3)`
+    * `things.remove(‘a thing’)`
+    * `l1.extend(l2)` 
+* Organizing a list
+    * Sort permanently with `sort`
+    * Get a sorted copy with `sorted()`
+    * Reversing a list with `reverse()`
+* `n = len(things)` 
 * Tuples
     * Parens 
     * Safety check
