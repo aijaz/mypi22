@@ -1,4 +1,4 @@
-# Syllabus & Lesson Plan 3
+# Syllabus & Lesson Plan 4
 
 We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e/) as the course textbook. The syllabus (mostly) follows the order of topics as introduced in the book. I will be using different examples during class so you can use the book to study the topics in greater detail, and get a better understanding of them.
 
@@ -141,6 +141,7 @@ my_list[3] # this should throw an error. Talk about this
 
 * Homework review
 * Looping through an entire list
+
 ```python
 things = ['Raindrops', 'Whiskers', 'Kettles', 'Mittens', 'Packages']
 for thing in things:
