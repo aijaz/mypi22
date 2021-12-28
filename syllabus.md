@@ -1,4 +1,4 @@
-# Syllabus & Lesson Plan 2
+# Syllabus & Lesson Plan 3
 
 We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e/) as the course textbook. The syllabus (mostly) follows the order of topics as introduced in the book. I will be using different examples during class so you can use the book to study the topics in greater detail, and get a better understanding of them.
 
@@ -152,6 +152,7 @@ for thing in things:
     - 2 print statements
 
 * Statements after a for loop
+
 ```python
 for person in ("Aijaz", "Adel", "Ayesha"):
   print(f"Hello, {person}")
