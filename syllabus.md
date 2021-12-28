@@ -247,7 +247,6 @@ months = ['Jan', 'Feb', 'Mar',
 first_3 = months[0:3] # ['Jan', 'Feb', 'Mar']
 q2 = months[3:6] # ['Apr', 'May', 'Jun']
 ```
-* List slices (cont)
     - Omitting the first parameter implies it's 0
 ```python
 months = ['Jan', 'Feb', 'Mar', 
@@ -256,7 +255,6 @@ months = ['Jan', 'Feb', 'Mar',
           'Oct', 'Nov', 'Dec']
 first_third = months[:4] # ['Jan', 'Feb', 'Mar', 'Apr']
 ```
-* List slices (cont)
     - Omitting the second parameter implies it's the last index + 1
 ```python
 months = ['Jan', 'Feb', 'Mar', 
@@ -265,7 +263,6 @@ months = ['Jan', 'Feb', 'Mar',
           'Oct', 'Nov', 'Dec']
 last_third = months[8:4] # ['Sep', 'Oct', 'Nov', 'Dec']
 ```
-* List slices (cont)
     - Omitting both parameter implies indexes 0 and the last index + 1
 ```python
 months = ['Jan', 'Feb', 'Mar', 
@@ -274,7 +271,6 @@ months = ['Jan', 'Feb', 'Mar',
           'Oct', 'Nov', 'Dec']
 year = months[:]
 ```
-* List slices (cont)
     - An index of -1 is the index of the last item
     - An index of -2 is the second-last item, and son on
 ```python
