@@ -1,4 +1,4 @@
-# Syllabus & Lesson Plan 6
+# Syllabus & Lesson Plan 8
 
 We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e/) as the course textbook. The syllabus (mostly) follows the order of topics as introduced in the book. I will be using different examples during class so you can use the book to study the topics in greater detail, and get a better understanding of them.
 
@@ -59,14 +59,15 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * **Homework**
     * Babyshark.py
     * Write a program that asks you to input a string. Once you input a string it should print out that string, followed by "shark! Do do do, do do do!" 3 times followed by the string, and then "shark"
-```
-    What is your name? 
-    Baby
-    Baby shark! Do do do do do do!
-    Baby shark! Do do do do do do!
-    Baby shark! Do do do do do do!
-    BABY SHARK!
-```
+
+    ```
+        What is your name? 
+        Baby
+        Baby shark! Do do do do do do!
+        Baby shark! Do do do do do do!
+        Baby shark! Do do do do do do!
+        BABY SHARK!
+    ```
     
 ## Week 2: Introduction to Lists and Tuples
 
@@ -92,14 +93,15 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     * It's this way in most computer languages
     * Think of an index as the _distance from the first item_
     * The index of the last item is the length of the list - 1
-```python
-my_list = [10, 20, 30]
-l = len(my_list)
-my_list[0]
-my_list[1]
-my_list[2]
-my_list[3] # this should throw an error. Talk about this
-```
+
+    ```python
+    my_list = [10, 20, 30]
+    l = len(my_list)
+    my_list[0]
+    my_list[1]
+    my_list[2]
+    my_list[3] # this should throw an error. Talk about this
+    ```
     * You can also use negative indexes. `-1` for the last item, and so on
     * `li = things[-1]`
     * Why `-1`?  Because `-0` doesn't make sense.
@@ -142,11 +144,11 @@ my_list[3] # this should throw an error. Talk about this
 * Homework review
 * Looping through an entire list
 
-```python
-    things = ['Raindrops', 'Whiskers', 'Kettles', 'Mittens', 'Packages']
-    for thing in things:
-      print(thing)
-```
+    ```python
+        things = ['Raindrops', 'Whiskers', 'Kettles', 'Mittens', 'Packages']
+        for thing in things:
+          print(thing)
+    ```
 
 * Step through loop
 * Multiple statements in a block
@@ -154,18 +156,18 @@ my_list[3] # this should throw an error. Talk about this
 
 * Statements after a for loop
 
-```python
-    for person in ("Aijaz", "Adel", "Ayesha"):
-      print(f"Hello, {person}")
-    
-    print("It’s good to meet all of you.")
-    
-    the_sum = 0
-    for n in (1, 2, 3, 4):
-      the_sum = the_sum + n
-    
-    print(f"The sum of the first 4 integers is {the_sum}")
-```
+    ```python
+        for person in ("Aijaz", "Adel", "Ayesha"):
+          print(f"Hello, {person}")
+        
+        print("It’s good to meet all of you.")
+        
+        the_sum = 0
+        for n in (1, 2, 3, 4):
+          the_sum = the_sum + n
+        
+        print(f"The sum of the first 4 integers is {the_sum}")
+    ```
 
 * Blank line optional
 * Avoiding Indentation Errors
@@ -175,52 +177,59 @@ my_list[3] # this should throw an error. Talk about this
         + Two parameters: start_at and stop_before
         + Never includes the second parameter
 
-```python
-        s = 0
-        for v in range(1, 4):
-          s = s + v
-        
-        print(f"the sum of the first 3 integers is {s}")
-        
-        #################################################
-        
-        s = 0
-        n = 4
-        for v in range(1, n):
-          s = s + v
-        
-        print(f"the sum of the first {n - 1} integers is {s}")
-        
-        #################################################
-        
-        s = 0
-        n = 4
-        for v in range(1, n):
-          s += v
-        
-        print(f"the sum of the first {n - 1} integers is {s}")
-```
+            ```python
+                    s = 0
+                    for v in range(1, 4):
+                        s = s + v
+                    
+                    print(f"the sum of the first 3 integers is {s}")
+                    
+                    #################################################
+                    
+                    s = 0
+                    n = 4
+                    for v in range(1, n):
+                        s = s + v
+                    
+                    print(f"the sum of the first {n - 1} integers is {s}")
+                    
+                    #################################################
+                    
+                    s = 0
+                    n = 4
+                    for v in range(1, n):
+                        s += v
+                    
+                    print(f"the sum of the first {n - 1} integers is {s}")
+            ```
+
         + `range` with 1 parameter
-```python
-for n in range(5):
-    print(n)
-```
-        + `range` with 1 parameter - starts at 0, stops at parameter - 1
-    Works well with list indexes
-```python
-odds = [1, 3, 5, 7, 9]
-for f in range(len(odds)):
-    print(odds[f] + 1)
-``` 
+
+            ```python
+            for n in range(5):
+                print(n)
+            ```
+
+        + `range` with 1 parameter - starts at 0, stops at parameter - Works well with list indexes
+
+            ```python
+            odds = [1, 3, 5, 7, 9]
+            for f in range(len(odds)):
+                print(odds[f] + 1)
+            ``` 
+
         + `range` with 3 parameter: increment by parameter 3 instead of 1
-```python
-for v in range(1, 10, 3):
-    print(v)
-```
+
+            ```python
+            for v in range(1, 10, 3):
+                print(v)
+            ```
+
         + Using `range` to create lists
-```python
-l = list(range(1, 10, 3))
-```
+
+            ```python
+            l = list(range(1, 10, 3))
+            ```
 
 * Functions on lists
     - `min()`
@@ -230,28 +239,32 @@ l = list(range(1, 10, 3))
 
 * List comprehensions
     - Elegant shorthand for the creation of a new list and a `for` loop.
-```pycon
->>> numbers = [1, 2, 3, 4, 5]
->>> numbers
-[1, 2, 3, 4, 5]
->>> doubles = [x * 2 for x in numbers]
->>> doubles
-[2, 4, 6, 8, 10]
->>> triples = [item * 3 for item in numbers]
->>> triples
-[3, 6, 9, 12, 15]
->>> halves = [item/2 for item in numbers]
->>> halves
-[0.5, 1.0, 1.5, 2.0, 2.5]
->>>
-``` 
+
+        ```pycon
+        >>> numbers = [1, 2, 3, 4, 5]
+        >>> numbers
+        [1, 2, 3, 4, 5]
+        >>> doubles = [x * 2 for x in numbers]
+        >>> doubles
+        [2, 4, 6, 8, 10]
+        >>> triples = [item * 3 for item in numbers]
+        >>> triples
+        [3, 6, 9, 12, 15]
+        >>> halves = [item/2 for item in numbers]
+        >>> halves
+        [0.5, 1.0, 1.5, 2.0, 2.5]
+        >>>
+        ``` 
+
     - You can also use ranges with list comprehensions
-```pycon
->>> squares = [x**2 for x in range(1, 10)]
->>> squares
-[1, 4, 9, 16, 25, 36, 49, 64, 81]
->>>
-```
+
+        ```pycon
+        >>> squares = [x**2 for x in range(1, 10)]
+        >>> squares
+        [1, 4, 9, 16, 25, 36, 49, 64, 81]
+        >>>
+        ```
+
 * List slices
     - A slice is like a range for lists
     - A slice returns a new list
