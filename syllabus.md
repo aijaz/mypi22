@@ -144,9 +144,9 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Looping through an entire list
 
     ```python
-        things = ['Raindrops', 'Whiskers', 'Kettles', 'Mittens', 'Packages']
-        for thing in things:
-          print(thing)
+    things = ['Raindrops', 'Whiskers', 'Kettles', 'Mittens', 'Packages']
+    for thing in things:
+        print(thing)
     ```
 
 * Step through loop
@@ -156,16 +156,16 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Statements after a for loop
 
     ```python
-        for person in ("Aijaz", "Adel", "Ayesha"):
-          print(f"Hello, {person}")
+    for person in ("Aijaz", "Adel", "Ayesha"):
+        print(f"Hello, {person}")
         
-        print("It’s good to meet all of you.")
+    print("It’s good to meet all of you.")
         
-        the_sum = 0
-        for n in (1, 2, 3, 4):
-          the_sum = the_sum + n
+    the_sum = 0
+    for n in (1, 2, 3, 4):
+        the_sum = the_sum + n
         
-        print(f"The sum of the first 4 integers is {the_sum}")
+    print(f"The sum of the first 4 integers is {the_sum}")
     ```
 
 * Blank line optional
