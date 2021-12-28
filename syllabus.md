@@ -1,4 +1,4 @@
-# Syllabus & Lesson Plan 4
+# Syllabus & Lesson Plan 5
 
 We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e/) as the course textbook. The syllabus (mostly) follows the order of topics as introduced in the book. I will be using different examples during class so you can use the book to study the topics in greater detail, and get a better understanding of them.
 
@@ -199,7 +199,6 @@ for v in range(1, n):
 
 print(f"the sum of the first {n - 1} integers is {s}")
 ```
-
         + `range` with 1 parameter
 ```python
 for n in range(5):
