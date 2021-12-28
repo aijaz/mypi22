@@ -127,7 +127,6 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 
 * Homework review
 * Looping through an entire list
-
 ```python
 things = ['Raindrops', 'Whiskers', 'Kettles', 'Mittens', 'Packages']
 for thing in things:
@@ -138,7 +137,6 @@ for thing in things:
 * Multiple statements in a block
     * 2 print statements
 * Statements after a for loop
-
 ```python
 for person in ("Aijaz", "Adel", "Ayesha"):
   print(f"Hello, {person}")
@@ -159,7 +157,6 @@ print(f"The sum of the first 4 integers is {the_sum}")
     * Range
         - Two parameters: start_at and stop_before
         - Never includes the second parameter
-    
 ```python
 s = 0
 for v in range(1, 4):
@@ -186,24 +183,24 @@ for v in range(1, n):
 print(f"the sum of the first {n - 1} integers is {s}")
 ```
 
-* `range` with 1 parameter
+        - `range` with 1 parameter
 ```python
 for n in range(5):
     print(n)
 ```
-* `range` with 1 parameter - starts at 0, stops at parameter - 1
+        - `range` with 1 parameter - starts at 0, stops at parameter - 1
     Works well with list indexes
 ```python
 odds = [1, 3, 5, 7, 9]
 for f in range(len(odds)):
     print(odds[f] + 1)
 ``` 
-* `range` with 3 parameter: increment by parameter 3 instead of 1
+        - `range` with 3 parameter: increment by parameter 3 instead of 1
 ```python
 for v in range(1, 10, 3):
     print(v)
 ```
-* Using `range` to create lists
+        - Using `range` to create lists
 ```python
 l = list(range(1, 10, 3))
 ```
@@ -229,7 +226,7 @@ l = list(range(1, 10, 3))
 [0.5, 1.0, 1.5, 2.0, 2.5]
 >>>
 ``` 
-* You can also use ranges with list comprehensions
+    - You can also use ranges with list comprehensions
 ```pycon
 >>> squares = [x**2 for x in range(1, 10)]
 >>> squares
@@ -272,7 +269,7 @@ months = ['Jan', 'Feb', 'Mar',
 year = months[:]
 ```
     - An index of -1 is the index of the last item
-    - An index of -2 is the second-last item, and son on
+    - An index of -2 is the second-last item, and so on
 ```python
 months = ['Jan', 'Feb', 'Mar', 
           'Apr', 'May', 'Jun', 
