@@ -5,47 +5,47 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 ## Week 1
 
 * Computers are stupid
-	* Order
-	* Explicit instructions 
+    * Order
+    * Explicit instructions 
 * Launching and using the REPL
-	* Your first Python Program in the repl
-	* Print("hello world")
-	* Now you’re a programmer
+    * Your first Python Program in the repl
+    * Print("hello world")
+    * Now you’re a programmer
 * Pycharm
-	* Launch
-	* Creating a new project.
-	* Type in hello_world.py 
-	* How to run the current file
-	* Add a second print statement 
+    * Launch
+    * Creating a new project.
+    * Type in hello_world.py 
+    * How to run the current file
+    * Add a second print statement 
 * What happens when you run a program
 * Operators and objects
-	* Objects are things
+    * Objects are things
 * Functions
-	* Verbs. Actions.
+    * Verbs. Actions.
 * Saywhat.py
 
 --- 
 
 * Variables
-	* Use a sheet of paper, folded up
-	* Two sheets. Give a sheet to each student
-	* Ask student to unfold and read the value
-	* Use wrong name: Computers are stupid
-	* Update variable repeat
-	* Message = "hw" print message 
-	* Try invalid variable names
-	    * starting with number
-	    * With space
-	    * Typos
-	* Assignment 
-	* Lookup
-	* Give a student a blank sheet. None.
-	* Multiple assignment
+    * Use a sheet of paper, folded up
+    * Two sheets. Give a sheet to each student
+    * Ask student to unfold and read the value
+    * Use wrong name: Computers are stupid
+    * Update variable repeat
+    * Message = "hw" print message 
+    * Try invalid variable names
+        * starting with number
+        * With space
+        * Typos
+    * Assignment 
+    * Lookup
+    * Give a student a blank sheet. None.
+    * Multiple assignment
 * Strings
 * Operators 
-	* print "hello " + "world" string
-	* Introduce Integers
-	* Int operators
+    * print "hello " + "world" string
+    * Introduce Integers
+    * Int operators
 * Functions - title(), upper(), and lower()
 * Use pycharm
 * "Hello world".title()
@@ -54,20 +54,20 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Quotes in strings
 * Double and triple quoted strings 
 * Comments 
-	* why use comments?
+    * why use comments?
 * Reading User Input 
 * **Homework**
     * Babyshark.py
     * Write a program that asks you to input a string. Once you input a string it should print out that string, followed by "shark! Do do do, do do do!" 3 times followed by the string, and then "shark"
 ```
-	What is your name? 
-	Baby
-	Baby shark! Do do do do do do!
-	Baby shark! Do do do do do do!
-	Baby shark! Do do do do do do!
-	BABY SHARK!
+    What is your name? 
+    Baby
+    Baby shark! Do do do do do do!
+    Baby shark! Do do do do do do!
+    Baby shark! Do do do do do do!
+    BABY SHARK!
 ```
-	
+    
 ## Week 2: Introduction to Lists and Tuples
 
 * What is a list
@@ -95,8 +95,8 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Lists containing lists
     * `l1.append(l2)`
     * List data structures
-	    * [x,y]
-	    * If you never need to add or delete, use tuples instead 
+        * [x,y]
+        * If you never need to add or delete, use tuples instead 
 * List copy references 
     * References
     * Make a "book" of folded sheets of paper
@@ -116,11 +116,11 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     5. After a week, "7 tiles" moves to the second spot but the third most favorite game moves to the top spot. Modify the list accordingly. 
     6. After another week, you get bored of "7 tiles altogether" and remove it from your list altogether. Everything else stays the same. Modify the list accordingly
     7. In a few weeks we’ll be making a downhill skiing game. In this game the player will have to ski  between obstacles. Each horizontal row across the slope has 15 spots. Each spot can either have an obstacle or be empty. The goal of the game is to have the player ski through the empty spots without hitting an obstacle. Each obstacle can be a rock or a snowman. You may use strings or integers to represent an obstacle or  an empty space. 
-	    1. create a data structure for a row. 
-	    2. Assuming each screen has 20 rows, create a data structure for a screen. 
-	    3. Assuming each row has 3 obstacles, populate your data structure with the appropriate obstacles
-	    4. Print your data structure. 
-	    5. [image:2C7C6F73-6F2D-4C70-BF73-83D43674D4AB-821-000003A618A42113/IMG_0003.jpeg]
+        1. create a data structure for a row. 
+        2. Assuming each screen has 20 rows, create a data structure for a screen. 
+        3. Assuming each row has 3 obstacles, populate each row with obstacles placed at random locations. 
+        4. Print your data structure. 
+        5. [image:2C7C6F73-6F2D-4C70-BF73-83D43674D4AB-821-000003A618A42113/IMG_0003.jpeg]
 
 
 ## Week 3. Working with Lists and Tuples
@@ -129,13 +129,14 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Looping through an entire list
 
 ```python
+things = ['Raindrops', 'Whiskers', 'Kettles', 'Mittens', 'Packages']
 for thing in things:
   print(thing)
 ```
 
 * Step through loop
 * Multiple statements in a block
-	* 2 print statements
+    * 2 print statements
 * Statements after a for loop
 
 ```python
@@ -151,18 +152,20 @@ for n in (1, 2, 3, 4):
 print(f"The sum of the first 4 integers is {the_sum}")
 ```
 
-* 	blank line optional
+* Blank line optional
 * Avoiding Indentation Errors
 * Making Numerical Lists
-	* Many reasons exist: games, measurements, etc.
-	* Range
-	
+    * Many reasons exist: games, measurements, etc.
+    * Range
+        - Two parameters: start_at and stop_before
+        - Never includes the second parameter
+    
 ```python
 s = 0
 for v in range(1, 4):
   s = s + v
 
-print(f"the sum of the first 4 integers is {s}")
+print(f"the sum of the first 3 integers is {s}")
 
 #################################################
 
@@ -171,7 +174,7 @@ n = 4
 for v in range(1, n):
   s = s + v
 
-print(f"the sum of the first n integers is {s}")
+print(f"the sum of the first {n - 1} integers is {s}")
 
 #################################################
 
@@ -180,22 +183,128 @@ n = 4
 for v in range(1, n):
   s += v
 
-print(f"the sum of the first n integers is {s}")
+print(f"the sum of the first {n - 1} integers is {s}")
 ```
 
-* Using range to make a list of numbers
-* Working with parts of a list
-
+* `range` with 1 parameter
 ```python
-numbers = list(range(1, 5))
+for n in range(5):
+    print(n)
+```
+* `range` with 1 parameter - starts at 0, stops at parameter - 1
+    Works well with list indexes
+```python
+odds = [1, 3, 5, 7, 9]
+for f in range(len(odds)):
+    print(odds[f] + 1)
+``` 
+* `range` with 3 parameter: increment by parameter 3 instead of 1
+```python
+for v in range(1, 10, 3):
+    print(v)
+```
+* Using `range` to create lists
+```python
+l = list(range(1, 10, 3))
+```
+* Functions on lists
+    - `min()`
+    - `max()`
+    - `sum()`
+    - `len()`
+* List comprehensions
+    - Elegant shorthand for the creation of a new list and a `for` loop.
+```pycon
+>>> numbers = [1, 2, 3, 4, 5]
+>>> numbers
+[1, 2, 3, 4, 5]
+>>> doubles = [x * 2 for x in numbers]
+>>> doubles
+[2, 4, 6, 8, 10]
+>>> triples = [item * 3 for item in numbers]
+>>> triples
+[3, 6, 9, 12, 15]
+>>> halves = [item/2 for item in numbers]
+>>> halves
+[0.5, 1.0, 1.5, 2.0, 2.5]
+>>>
+``` 
+* You can also use ranges with list comprehensions
+```pycon
+>>> squares = [x**2 for x in range(1, 10)]
+>>> squares
+[1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>>
+```
+* List slices
+    - A slice is like a range for lists
+    - A slice returns a new list
+```python
+months = ['Jan', 'Feb', 'Mar', 
+          'Apr', 'May', 'Jun', 
+          'Jul', 'Aug', 'Sep', 
+          'Oct', 'Nov', 'Dec']
+first_3 = months[0:3] # ['Jan', 'Feb', 'Mar']
+q2 = months[3:6] # ['Apr', 'May', 'Jun']
+```
+* List slices (cont)
+    - Omitting the first parameter implies it's 0
+```python
+months = ['Jan', 'Feb', 'Mar', 
+          'Apr', 'May', 'Jun', 
+          'Jul', 'Aug', 'Sep', 
+          'Oct', 'Nov', 'Dec']
+first_third = months[:4] # ['Jan', 'Feb', 'Mar', 'Apr']
+```
+* List slices (cont)
+    - Omitting the second parameter implies it's the last index + 1
+```python
+months = ['Jan', 'Feb', 'Mar', 
+          'Apr', 'May', 'Jun', 
+          'Jul', 'Aug', 'Sep', 
+          'Oct', 'Nov', 'Dec']
+last_third = months[8:4] # ['Sep', 'Oct', 'Nov', 'Dec']
+```
+* List slices (cont)
+    - Omitting both parameter implies indexes 0 and the last index + 1
+```python
+months = ['Jan', 'Feb', 'Mar', 
+          'Apr', 'May', 'Jun', 
+          'Jul', 'Aug', 'Sep', 
+          'Oct', 'Nov', 'Dec']
+year = months[:]
+```
+* List slices (cont)
+    - An index of -1 is the index of the last item
+    - An index of -2 is the second-last item, and son on
+```python
+months = ['Jan', 'Feb', 'Mar', 
+          'Apr', 'May', 'Jun', 
+          'Jul', 'Aug', 'Sep', 
+          'Oct', 'Nov', 'Dec']
+p4 = months[-4:-1] # ['Sep', 'Oct', 'Nov']
 ```
 
 * **Homework**
+
+    1. Create a data structure to represent a planet and it's confirmed number of moons. Create a list of these data structures. You can find the data on [Wikipedia](https://en.wikipedia.org/wiki/Planet#Planetary_attributes)
+    2. Print the name of each planet along with its number of confirmed moons. 
+    3. Print the total number of confirmed moons in the solar system. 
+    4. For each of the the first 4 planets in the solar system, print the planet's name, and it's number of moons. Print the total number of moons for those 4 planets.
+    5. For each of the the last 3 planets in the solar system, print the planet's name, and it's number of moons. Print the total number of moons for those 3 planets.
+    6. Use a single Python statement no more than 80 characters long to generate a list of of the reciprocals of the first 1000 positive integers. (Remember: a positive integer is any whole number greater than 0, and the reciprocal of n is 1/n).
 
 
 ## Week 4. Conditionals
 * If statements
 * Using conditionals with lists
+* You can also limit which items make it into a comprehension:
+```pycon
+>>> squares_of_evens = [x**2 for x in range(1,10) if x%2 == 0]
+>>> squares_of_evens
+[4, 16, 36, 64]
+>>>
+```
 
 ## Week 5. Dictionaries
 * Creating dictionaries
