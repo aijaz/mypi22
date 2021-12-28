@@ -317,16 +317,67 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 
 
 ## Week 4. Conditionals
+* Programs so far have been boring
+* Programs get interesting when they examine conditions and make decisions based on the value of those conditions.
 * If statements
+
+    ```python
+    team = input("What is your favorite NBA team?")
+    if team == "Bulls":
+        print("They’re my favorite team, too!")
+    else:
+        print("They’re not as good as the Bulls, NGL")
+    ```
+
+* Assignment vs Test for equality 
+
+    ```python
+    team = ‘Bulls’
+    team == ‘Bulls’
+    team == ‘Nuggets’
+    ```
+
+* Syntactic VS Semantic equality
+
+    ```python
+    team = ‘Lakers’
+    team == ‘Lakers’
+    team == ‘lakers’
+    lower(team) 
+    lower(team) == ‘lakers’
+    team = ‘LAKERS’
+    lower(team) == ‘lakers’
+    team = ‘lAkERs’
+    lower(team) == ‘lakers’
+    team == ‘lAkERs’
+    ```
+
+* Testing for inequality
+
+    ```python
+    team = input("What is your favorite NBA team?")
+    if team != "Bulls":
+        print("They’re not as good as the Bulls, NGL")
+    else:
+        print("They’re my favorite team, too!")
+    ```
+
+* Testing numbers
+
+    ```python
+    age = input(‘How old are you?’)
+    if age < 18:
+        print(‘You are an adult’)
+    
+    ```
+
 * Using conditionals with lists
 * You can also limit which items make it into a comprehension:
 
-    ```pycon
-    >>> squares_of_evens = [x**2 for x in range(1,10) if x%2 == 0]
-    >>> squares_of_evens
-    [4, 16, 36, 64]
-    >>>
+    ```python
+    squares_of_evens = [x**2 for x in range(1,10) if x%2 == 0]
     ```
+
 
 ## Week 5. Dictionaries
 * Creating dictionaries
