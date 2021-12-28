@@ -179,29 +179,29 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
         + Never includes the second parameter
 
             ```python
-                    s = 0
-                    for v in range(1, 4):
-                        s = s + v
-                    
-                    print(f"the sum of the first 3 integers is {s}")
-                    
-                    #################################################
-                    
-                    s = 0
-                    n = 4
-                    for v in range(1, n):
-                        s = s + v
-                    
-                    print(f"the sum of the first {n - 1} integers is {s}")
-                    
-                    #################################################
-                    
-                    s = 0
-                    n = 4
-                    for v in range(1, n):
-                        s += v
-                    
-                    print(f"the sum of the first {n - 1} integers is {s}")
+            s = 0
+            for v in range(1, 4):
+                s = s + v
+            
+            print(f"the sum of the first 3 integers is {s}")
+            
+            #################################################
+            
+            s = 0
+            n = 4
+            for v in range(1, n):
+                s = s + v
+            
+            print(f"the sum of the first {n - 1} integers is {s}")
+            
+            #################################################
+            
+            s = 0
+            n = 4
+            for v in range(1, n):
+                s += v
+            
+            print(f"the sum of the first {n - 1} integers is {s}")
             ```
 
         + `range` with 1 parameter
