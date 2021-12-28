@@ -390,6 +390,23 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
         print("You're an adult")
     ```
 
+* Checking multiple conditions
+    - Use `or` if you want to check multiple conditions and want to at least one condition to be True
+
+        ```python
+        age = input('How old are you?')
+        if age < 20 and age > 17: 
+            print("You are a teenaged adult.")
+        ```
+
+    - Use `and` if you want to check multiple conditions and want to all conditions to be True
+
+        ```python
+        age = input('How old are you?')
+        if age < 20 and age > 17: 
+            print("You are a teenaged adult.")
+        ```
+
 * Using conditionals with lists
 * You can also limit which items make it into a comprehension:
 
