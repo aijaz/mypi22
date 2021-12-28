@@ -1,4 +1,4 @@
-# Syllabus & Lesson Plan 8
+# Syllabus & Lesson Plan 9
 
 We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e/) as the course textbook. The syllabus (mostly) follows the order of topics as introduced in the book. I will be using different examples during class so you can use the book to study the topics in greater detail, and get a better understanding of them.
 
@@ -94,14 +94,15 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     * Think of an index as the _distance from the first item_
     * The index of the last item is the length of the list - 1
 
-    ```python
-    my_list = [10, 20, 30]
-    l = len(my_list)
-    my_list[0]
-    my_list[1]
-    my_list[2]
-    my_list[3] # this should throw an error. Talk about this
-    ```
+        ```python
+        my_list = [10, 20, 30]
+        l = len(my_list)
+        my_list[0]
+        my_list[1]
+        my_list[2]
+        my_list[3] # this should throw an error. Talk about this
+        ```
+
     * You can also use negative indexes. `-1` for the last item, and so on
     * `li = things[-1]`
     * Why `-1`?  Because `-0` doesn't make sense.
@@ -240,75 +241,72 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * List comprehensions
     - Elegant shorthand for the creation of a new list and a `for` loop.
 
-        ```pycon
-        >>> numbers = [1, 2, 3, 4, 5]
-        >>> numbers
-        [1, 2, 3, 4, 5]
-        >>> doubles = [x * 2 for x in numbers]
-        >>> doubles
-        [2, 4, 6, 8, 10]
-        >>> triples = [item * 3 for item in numbers]
-        >>> triples
-        [3, 6, 9, 12, 15]
-        >>> halves = [item/2 for item in numbers]
-        >>> halves
-        [0.5, 1.0, 1.5, 2.0, 2.5]
-        >>>
+        ```python
+        numbers = [1, 2, 3, 4, 5]
+        doubles = [x * 2 for x in numbers]
+        triples = [item * 3 for item in numbers]
+        halves = [item/2 for item in numbers]
         ``` 
 
     - You can also use ranges with list comprehensions
 
-        ```pycon
-        >>> squares = [x**2 for x in range(1, 10)]
-        >>> squares
-        [1, 4, 9, 16, 25, 36, 49, 64, 81]
-        >>>
+        ```python
+        squares = [x**2 for x in range(1, 10)]
         ```
 
 * List slices
     - A slice is like a range for lists
     - A slice returns a new list
-```python
-months = ['Jan', 'Feb', 'Mar', 
-          'Apr', 'May', 'Jun', 
-          'Jul', 'Aug', 'Sep', 
-          'Oct', 'Nov', 'Dec']
-first_3 = months[0:3] # ['Jan', 'Feb', 'Mar']
-q2 = months[3:6] # ['Apr', 'May', 'Jun']
-```
+
+        ```python
+        months =   ['Jan', 'Feb', 'Mar', 
+                    'Apr', 'May', 'Jun', 
+                    'Jul', 'Aug', 'Sep', 
+                    'Oct', 'Nov', 'Dec']
+        first_3 = months[0:3] # ['Jan', 'Feb', 'Mar']
+        q2 = months[3:6] # ['Apr', 'May', 'Jun']
+        ```
+
     - Omitting the first parameter implies it's 0
-```python
-months = ['Jan', 'Feb', 'Mar', 
-          'Apr', 'May', 'Jun', 
-          'Jul', 'Aug', 'Sep', 
-          'Oct', 'Nov', 'Dec']
-first_third = months[:4] # ['Jan', 'Feb', 'Mar', 'Apr']
-```
+
+        ```python
+        months =   ['Jan', 'Feb', 'Mar', 
+                    'Apr', 'May', 'Jun', 
+                    'Jul', 'Aug', 'Sep', 
+                    'Oct', 'Nov', 'Dec']
+        first_third = months[:4] # ['Jan', 'Feb', 'Mar', 'Apr']
+        ```
+
     - Omitting the second parameter implies it's the last index + 1
-```python
-months = ['Jan', 'Feb', 'Mar', 
-          'Apr', 'May', 'Jun', 
-          'Jul', 'Aug', 'Sep', 
-          'Oct', 'Nov', 'Dec']
-last_third = months[8:4] # ['Sep', 'Oct', 'Nov', 'Dec']
-```
+
+        ```python
+        months =   ['Jan', 'Feb', 'Mar', 
+                    'Apr', 'May', 'Jun', 
+                    'Jul', 'Aug', 'Sep', 
+                    'Oct', 'Nov', 'Dec']
+        last_third = months[8:4] # ['Sep', 'Oct', 'Nov', 'Dec']
+        ```
+
     - Omitting both parameter implies indexes 0 and the last index + 1
-```python
-months = ['Jan', 'Feb', 'Mar', 
-          'Apr', 'May', 'Jun', 
-          'Jul', 'Aug', 'Sep', 
-          'Oct', 'Nov', 'Dec']
-year = months[:]
-```
+
+        ```python
+        months =   ['Jan', 'Feb', 'Mar', 
+                    'Apr', 'May', 'Jun', 
+                    'Jul', 'Aug', 'Sep', 
+                    'Oct', 'Nov', 'Dec']
+        year = months[:]
+        ```
+
     - An index of -1 is the index of the last item
     - An index of -2 is the second-last item, and so on
-```python
-months = ['Jan', 'Feb', 'Mar', 
-          'Apr', 'May', 'Jun', 
-          'Jul', 'Aug', 'Sep', 
-          'Oct', 'Nov', 'Dec']
-p4 = months[-4:-1] # ['Sep', 'Oct', 'Nov']
-```
+
+        ```python
+        months =   ['Jan', 'Feb', 'Mar', 
+                    'Apr', 'May', 'Jun', 
+                    'Jul', 'Aug', 'Sep', 
+                    'Oct', 'Nov', 'Dec']
+        p4 = months[-4:-1] # ['Sep', 'Oct', 'Nov']
+        ```
 
 * **Homework**
 
@@ -324,12 +322,13 @@ p4 = months[-4:-1] # ['Sep', 'Oct', 'Nov']
 * If statements
 * Using conditionals with lists
 * You can also limit which items make it into a comprehension:
-```pycon
->>> squares_of_evens = [x**2 for x in range(1,10) if x%2 == 0]
->>> squares_of_evens
-[4, 16, 36, 64]
->>>
-```
+
+    ```pycon
+    >>> squares_of_evens = [x**2 for x in range(1,10) if x%2 == 0]
+    >>> squares_of_evens
+    [4, 16, 36, 64]
+    >>>
+    ```
 
 ## Week 5. Dictionaries
 * Creating dictionaries
