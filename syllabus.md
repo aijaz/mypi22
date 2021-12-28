@@ -1,4 +1,4 @@
-# Syllabus & Lesson Plan 5
+# Syllabus & Lesson Plan 6
 
 We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e/) as the course textbook. The syllabus (mostly) follows the order of topics as introduced in the book. I will be using different examples during class so you can use the book to study the topics in greater detail, and get a better understanding of them.
 
@@ -143,9 +143,9 @@ my_list[3] # this should throw an error. Talk about this
 * Looping through an entire list
 
 ```python
-things = ['Raindrops', 'Whiskers', 'Kettles', 'Mittens', 'Packages']
-for thing in things:
-  print(thing)
+    things = ['Raindrops', 'Whiskers', 'Kettles', 'Mittens', 'Packages']
+    for thing in things:
+      print(thing)
 ```
 
 * Step through loop
@@ -155,16 +155,16 @@ for thing in things:
 * Statements after a for loop
 
 ```python
-for person in ("Aijaz", "Adel", "Ayesha"):
-  print(f"Hello, {person}")
-
-print("It’s good to meet all of you.")
-
-the_sum = 0
-for n in (1, 2, 3, 4):
-  the_sum = the_sum + n
-
-print(f"The sum of the first 4 integers is {the_sum}")
+    for person in ("Aijaz", "Adel", "Ayesha"):
+      print(f"Hello, {person}")
+    
+    print("It’s good to meet all of you.")
+    
+    the_sum = 0
+    for n in (1, 2, 3, 4):
+      the_sum = the_sum + n
+    
+    print(f"The sum of the first 4 integers is {the_sum}")
 ```
 
 * Blank line optional
@@ -174,30 +174,31 @@ print(f"The sum of the first 4 integers is {the_sum}")
     - Range
         + Two parameters: start_at and stop_before
         + Never includes the second parameter
+
 ```python
-s = 0
-for v in range(1, 4):
-  s = s + v
-
-print(f"the sum of the first 3 integers is {s}")
-
-#################################################
-
-s = 0
-n = 4
-for v in range(1, n):
-  s = s + v
-
-print(f"the sum of the first {n - 1} integers is {s}")
-
-#################################################
-
-s = 0
-n = 4
-for v in range(1, n):
-  s += v
-
-print(f"the sum of the first {n - 1} integers is {s}")
+        s = 0
+        for v in range(1, 4):
+          s = s + v
+        
+        print(f"the sum of the first 3 integers is {s}")
+        
+        #################################################
+        
+        s = 0
+        n = 4
+        for v in range(1, n):
+          s = s + v
+        
+        print(f"the sum of the first {n - 1} integers is {s}")
+        
+        #################################################
+        
+        s = 0
+        n = 4
+        for v in range(1, n):
+          s += v
+        
+        print(f"the sum of the first {n - 1} integers is {s}")
 ```
         + `range` with 1 parameter
 ```python
