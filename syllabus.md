@@ -365,10 +365,29 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Testing numbers
 
     ```python
-    age = input(‘How old are you?’)
-    if age < 18:
-        print(‘You are an adult’)
-    
+    age = input('How old are you?')
+    if age > 17:
+        print('You are an adult')
+    else: 
+        print("You're still a child.")
+    ```
+
+* Testing multiple conditions
+
+    ```python
+    age = input('How old are you?')
+    if age < 4: 
+        print("You're a baby")
+    elif age < 11:
+        print("You're a little kid")
+    elif age < 13:
+        print("You're a tween")
+    elif age < 18:
+        print("You're a teenager")
+    elif age < 20:
+        print("You're a teenaged adult")
+    else:
+        print("You're an adult")
     ```
 
 * Using conditionals with lists
