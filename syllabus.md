@@ -317,6 +317,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 
 
 ## Week 4. Conditionals
+
 * Programs so far have been boring
 * Programs get interesting when they examine conditions and make decisions based on the value of those conditions.
 * If statements
@@ -420,13 +421,26 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     - `"Jun" in ["Jan", "Feb", "Mar"]`
     - `"feb" not in ["Jan", "Feb", "Mar"]`
     - `"ear" in "hearing"`
+    - `5 >= 4`
 * Describe the modulo operator (`%`)
-* You can also limit which items make it into a comprehension:
+    - `5 % 3` has the value of the _remainder_ when you divide 5 by 3 (in this case: 2)
+    - if `x % y == 0` it means that `x` is a multiple of `y`
+    - this is often used to test if a number is odd or even. If that number % 2 is 0, then it is a multiple if 2. Which makes it even. Otherwise that number % 2 is 1, and that makes it odd.
+    - The value of `x % y` is always a number >= 0 and less than `y`
+* Knowing this, now you can also limit which items make it into a comprehension using a comprehension condition:
 
     ```python
     squares_of_evens = [x**2 for x in range(1,10) if x%2 == 0]
     ```
+### Homework
 
+* Let's expand on our game from a couple of weeks ago. Create a data structure for a skier. A skier has two attributes: 
+    - a row number
+    - a position in the row
+        + remember: each row has 15 spots
+        + what numbers would you use? 1-15? or 0-14? Why?
+* Two weeks ago you created a data structure for a game screen. Now that you have a data structure for a player, write some code to check if a player has collided with an obstacle.
+    
 
 ## Week 5. Dictionaries
 * Creating dictionaries
