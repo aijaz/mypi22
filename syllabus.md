@@ -459,6 +459,8 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     print("Done!")
     ```
 
+    - If you forget the break statement you'll wind up with an infinite loop. You'll have to hit ctrl-C to stop the program
+    
 ### Homework
 
 * Let's expand on our game from a couple of weeks ago. Create a data structure for a skier. A skier has two attributes: 
