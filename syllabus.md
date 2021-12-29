@@ -432,6 +432,33 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     ```python
     squares_of_evens = [x**2 for x in range(1,10) if x%2 == 0]
     ```
+    
+## While loops
+
+* Backbone of most software
+* Example: Loop variable
+
+    ```python
+    current_number = 10
+    while current_number >= 0:
+        print(current_number)
+        current_number -= 1
+    print("Liftoff!")
+    ```
+
+* Example: Break
+
+    ```python
+    current_number = 1
+    while True:
+        print(current_number)
+        current_number += 1
+        if current_number == 7:
+            break
+            
+    print("Done!")
+    ```
+
 ### Homework
 
 * Let's expand on our game from a couple of weeks ago. Create a data structure for a skier. A skier has two attributes: 
