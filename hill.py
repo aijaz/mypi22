@@ -1,6 +1,7 @@
 import pygame
 from pygame.constants import *
 import math
+from pygame import mixer
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -8,6 +9,10 @@ clock.tick(60)
 screen_size = (470, 620)
 screen = pygame.display.set_mode(screen_size)
 font = pygame.font.Font(None, 32)
+
+# Background sound
+mixer.music.load("sounds/background.wav")
+mixer.music.play(-1)  # play background music on loop
 
 running = True
 
@@ -123,11 +128,11 @@ while running:
         skier_x = skier_location
         skier_y = 10
         if item != ' ':
-            item_x = -30 + 10 + (x * 30)
+            item_x = 10 + (x * 30)
             item_y = int(10 - offset)
         distance = math.sqrt(math.pow(skier_x - item_x, 2) + (math.pow(skier_y - item_y, 2)))
 
-        if distance < 25 and skier_y <= item_y:
+        if distance < 20:
             game_over = True
             break
 
