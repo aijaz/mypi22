@@ -1,5 +1,6 @@
 import pygame
 from pygame.constants import *
+import math
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -53,6 +54,7 @@ screen.blit(bg, (0, 0))
 first = True
 skier_direction = 'right'
 skier_location = 235
+game_over = False
 
 while running:
     for event in pygame.event.get():
@@ -64,14 +66,21 @@ while running:
             elif event.key == K_j:
                 skier_direction = 'right'
 
+    if game_over:
+        continue
+
     # screen.blit(bg, (0, 0))
+    dirty_rects = []
 
     # erase skier
     old_skier_rect = (skier_location, 10, 30, 30)
+    dirty_rects.append(old_skier_rect)
+    screen.blit(bg, old_skier_rect, old_skier_rect)
 
     for y, row in enumerate(hill):
         for x, item in enumerate(row):
             old_rect = pygame.Rect((int(10 + x * 30), int(10 + y * 30 - offset + y_speed), 30, 30))
+            dirty_rects.append(old_rect)
             if first:
                 first = False
             else:
@@ -79,6 +88,7 @@ while running:
                 screen.blit(bg, old_rect, old_rect)
 
             new_location = pygame.Rect((10 + x * 30, int(10 + y * 30 - offset), 30, 30))
+            dirty_rects.append(new_location)
 
             if item == '@':
                 screen.blit(snowman, new_location)
@@ -90,23 +100,36 @@ while running:
         skier_location += x_speed
         if skier_location > 420:
             skier_location = 420
-            # skier_direction = 'left'
         skier_image = ski_right
     else:
         skier_location -= x_speed
         if skier_location < 10:
             skier_location = 10
-            # skier_direction = 'right'
         skier_image = ski_left
 
+
     # draw skier
-    # new_skier_rect = (skier_location, 10, 30, 30)
-    screen.blit(skier_image, pygame.Rect(int(skier_location), 10, 30, 30))
+    new_skier_rect = pygame.Rect(int(skier_location), 10, 30, 30)
+    screen.blit(skier_image, new_skier_rect)
+    dirty_rects.append(new_skier_rect)
 
-    screen.blit(bg, (10, 0, 50, 50), (10, 0, 50, 50))
-    screen.blit(update_fps(), (10,0))
+    # screen.blit(bg, (10, 0, 50, 50), (10, 0, 50, 50))
+    # screen.blit(update_fps(), (10,0))
 
-    pygame.display.update()
+    pygame.display.update(dirty_rects)
+
+    # check for collision
+    for x, item in enumerate(hill[0]):
+        skier_x = skier_location
+        skier_y = 10
+        if item != ' ':
+            item_x = -30 + 10 + (x * 30)
+            item_y = int(10 - offset)
+        distance = math.sqrt(math.pow(skier_x - item_x, 2) + (math.pow(skier_y - item_y, 2)))
+
+        if distance < 25 and skier_y <= item_y:
+            game_over = True
+            break
 
     offset += y_speed
     if offset == 30:
