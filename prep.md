@@ -12,7 +12,8 @@ What we need for this class will not run in Windows 10 with S mode. You will nee
 4.	Wait for the app to download. The “Get” button will change to “Install on my devices.” Click that, and then click “Install now” to start the installation. If all is well, you should see a message saying “The product is installed.”
 5.	Hit the Windows key on your keyboard and type in `cmd` and then hit the ‘Enter’ key 
 6.	In the black window, type in `python --version` and then hit the ‘Enter’ key. It should print “Python 3.10.1” or higher 
-7.	Type in `pip install pygame` and then hit the ‘Enter’ key. Type in `pip install pyttsx3` and then hit the ‘Enter’ key. If there are no errors, you’re set!
+7.	Type in `pip install pygame` and then hit the ‘Enter’ key. Type in `pip install pyttsx3` and then hit the ‘Enter’ key. 
+8.  Download and install [Pycharm Community Edition](https://www.jetbrains.com/pycharm/download/). This is a free download. 
 
 
 ## macOS
@@ -23,9 +24,6 @@ What we need for this class will not run in Windows 10 with S mode. You will nee
 4.	Open a browser window and go to the macOS download page at https://www.python.org/downloads/release/python-3101/ 
 5.	Scroll down to the bottom of the page, to the “Files” section and click on ‘macOS 64-bit universal2 installer.’ 
 6.	When the download is complete, double-click the downloaded file to start the installer. Follow the steps to complete the installation. 
-7.	Go back to the Terminal window and type in `pip install pygame` and then hit the ‘return’ key. Type in `pip install pyttsx3` and then hit the ‘return’ key. If there are no errors, you’re set!
+7.	Go back to the Terminal window and type in `pip install pygame` and then hit the ‘return’ key. Type in `pip install pyttsx3` and then hit the ‘return’ key. 
+8.  Download and install [Pycharm Community Edition](https://www.jetbrains.com/pycharm/download/). This is a free download. 
 
-
-## Linux
-
-Most Linux installations come with python installed. Make sure you have version 3.9 or later by typing in `python3 --version`. If it’s older than 3.9, upgrade to the latest version.
