@@ -1,10 +1,12 @@
 # Getting Ready for the Class
 
-Python runs on most home computers, including those that run macOS, Windows and Linux. 
+Python runs on most home computers, including those that run macOS, Windows and Linux. Please install the software described below and [make the payment for the class](https://buy.stripe.com/fZe9BL6vug0AcaA144) if you haven't done so already.
 
 ## Windows
 
-What we need for this class will not run in Windows 10 with S mode. You will need to turn off S mode, or get a different computer to run the software that we need.
+What we need for this class will not run in Windows 10 with S mode. If you have Windows 10 with S mode, you will need to turn off S mode, or get a different computer to run the software that we need.
+
+**Please contact me if you need any help installing this software or have any questions before class starts.**
 
 1.	Open the Microsoft Store App and search for “Python”
 2.	You’ll see many results. Select “Python 3.10” only. It should be free, and from the Python Software Foundation
@@ -17,6 +19,8 @@ What we need for this class will not run in Windows 10 with S mode. You will nee
 
 
 ## macOS
+
+**Please contact me if you need any help installing this software or have any questions before class starts.**
 
 1.	Press the ⌘ and Space keys together. 
 2.	Type `terminal` and then hit the ‘return’ key.
