@@ -461,15 +461,49 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 
     - If you forget the break statement you'll wind up with an infinite loop. You'll have to hit ctrl-C to stop the program
     
+    - Looping over a list
+
+        ``` python
+        people = ["Alice", "Bob", "Charlie"]
+        for person in people:
+            print(person)
+        ```
+        
+        + Sometimes we want the index of the item along with the item:
+
+            ``` python
+            people = ["Alice", "Bob", "Charlie"]
+            i = 0
+            for person in people:
+                print(f"The person at index {i} is {person}")
+                i += 1
+            ```
+        
+        + Since this a common thing to want to do, there's a shortcut to do this in python:
+
+            ``` python
+            people = ["Alice", "Bob", "Charlie"]
+            for thing in enumerate(people):
+                print(thing)
+            ```
+
+            ``` python
+            people = ["Alice", "Bob", "Charlie"]
+            for i, person in enumerate(people):
+                print(f"The person at index {i} is {person}")
+            ```
+            
 ### Homework
 
-* Let's expand on our game from a couple of weeks ago. Create a data structure for a skier. A skier has two attributes: 
-    - a row number
-    - a position in the row
-        + remember: each row has 15 spots
-        + what numbers would you use? 1-15? or 0-14? Why?
-* Two weeks ago you created a data structure for a game screen. Now that you have a data structure for a player, write some code to check if a player has collided with an obstacle.
-    
+* Let's expand on our game from a couple of weeks ago. 
+* Our screen will be 470 pixels wide and 620 pixels high.
+* To keep things neat we will have a 10 pixel padding on each end. So our hill will be 450 pixels wide and 600 pixels high.
+* In pygame the origin of the coordinate system is at the upper left-hand-side of the screen. This means that the hill is at coordinate (10, 10)
+* We will use an image to represent the rider and the flags. The image for the rider will be 30 pixels wide and 30 pixels high. The image for the flag will be 15 pixels wide and 30 pixels high.
+* To place any image on the screen we have to specify its bounding rectangle, or rect. There are many ways to specify a rect. The simplest is with a tuple of 4 elements: `(x, y, width, height)` where `x` and `y` represent tge location of the upper left hand corner of the image.
+* Let's track the x location of the rider with a variable named `rider_x`
+* Write code to make sure that the rider stays on the hill and does not go too far off to the right or left. If the rider gets to the left edge of the hill, they can't go any further and stay there. Similarly, the rider cannot go off the right edge of the hill.
+
 
 ## Week 5. Dictionaries
 * Creating dictionaries
@@ -516,3 +550,4 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 ## Week 15. Project Work
 
 ## Week 16. Project Work
+
