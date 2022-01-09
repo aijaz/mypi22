@@ -2,11 +2,43 @@
 
 We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythoncrashcourse2e/) as the course textbook. The syllabus (mostly) follows the order of topics as introduced in the book. I will be using different examples during class so you can use the book to study the topics in greater detail, and get a better understanding of them.
 
-## Week 1
+## Setup
+- Reboot computer
+- Make sure new battery is in camera
+- Launch Pycharm
+- Close all Pycharm windows
+- Quit Pycharm
+- Delete wk01
+- Launch screenflow start recording
+    + Make sure screenflow is recording audio and video
+- Launch zoom
+    + Make sure zoom is recording
+- Do clapper
+- Stop Screenflow confirm video is good
+- Restart screenflow
+- Set focus on Fuji webcam
 
+## Week 1
+* Welcome
+    - About me
+    - About MYPI
+    - What you'll learn in this class
+        + Programming with Python
+        + Good enough to interview
+* House Rules
+    - Feel free to interrupt
+        + Just unmute yourself
+        + Or raise your hand
+    - I'll feel free to tell you to hold on
+    - It's ok to say I don't know
+    - It's up to you if you want to turn your video on or not
+        + It's easier for me to judge if you're confused about something if your video is on. 
+        + But at the end it's up to you, and I won't be offended one way or the other
+    - Office hours
 * Computers are stupid
     * Order
     * Explicit instructions 
+    * Only understand very simple languages
 * Launching and using the REPL
     * Your first Python Program in the repl
     * Print("hello world")
@@ -18,10 +50,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     * How to run the current file
     * Add a second print statement 
 * What happens when you run a program
-* Operators and objects
-    * Objects are things
-* Functions
-    * Verbs. Actions.
+* Syntax highlighting
 * Saywhat.py
 
 --- 
@@ -56,6 +85,16 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Comments 
     * why use comments?
 * Reading User Input 
+* Putting it all together
+
+    ```python
+    import pyttsx3
+    what = input("What should I say? ")
+    engine = pyttsx3.init()
+    engine.say(what)
+    engine.runAndWait()
+    ```
+
 * **Homework**
     * Babyshark.py
     * Write a program that asks you to input a string. Once you input a string it should print out that string, followed by "shark! Do do do, do do do!" 3 times followed by the string, and then "shark"
