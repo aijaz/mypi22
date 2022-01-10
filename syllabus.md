@@ -22,6 +22,9 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Welcome
     - About me
     - About MYPI
+        + Two sisters
+        + Originally for girls
+        + I do outdoor stuff
     - What you'll learn in this class
         + Programming with Python
         + Good enough to interview
@@ -30,7 +33,9 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
         + Just unmute yourself
         + Or raise your hand
     - I'll feel free to tell you to hold on
-    - It's ok to say I don't know
+    - It's ok to say I don't understand 
+        + That's on me, not on you
+        + Different ways to explain work with different people
     - It's up to you if you want to turn your video on or not
         + It's easier for me to judge if you're confused about something if your video is on. 
         + But at the end it's up to you, and I won't be offended one way or the other
