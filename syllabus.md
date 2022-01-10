@@ -56,7 +56,6 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     * Add a second print statement 
 * What happens when you run a program
 * Syntax highlighting
-* Saywhat.py
 
 --- 
 
