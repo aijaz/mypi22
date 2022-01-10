@@ -114,6 +114,21 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     
 ## Week 2: Introduction to Lists and Tuples
 
+#### Did not finish last week:
+* Using variables in strings: f strings
+* New lines in strings
+* Quotes in strings
+* Double and triple quoted strings 
+* Putting it all together
+
+    ```python
+    import pyttsx3
+    what = input("What should I say? ")
+    engine = pyttsx3.init()
+    engine.say(what)
+    engine.runAndWait()
+    ```
+
 * What is a list
 * Accessing elements with indexes
     * index 0 refers to the first item in the list
