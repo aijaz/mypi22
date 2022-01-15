@@ -129,6 +129,18 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     engine.runAndWait()
     ```
 
+- Homework review
+
+    ```python
+    name = input("What is your name? ")
+    print(name + " shark! Do do do do do do!")
+    print(name + " shark! Do do do do do do!")
+    print(name + " shark! Do do do do do do!")
+    print(name.upper() + " SHARK!")    
+    ```
+
+- Anything we missed last week
+
 * What is a list
 * Accessing elements with indexes
     * index 0 refers to the first item in the list
