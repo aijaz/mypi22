@@ -177,6 +177,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Tuples
     * Parens 
     * Safety check
+    * Usually heterogenous
 * Lists containing lists
     * `l1.append(l2)`
     * List data structures
