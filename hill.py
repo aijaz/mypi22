@@ -44,8 +44,8 @@ def update_fps():
     fps_text = font.render(fps, 1, pygame.Color("coral"))
     return fps_text
 
-y_speed = 0.25
-x_speed = 0.25
+y_speed = 0.5
+x_speed = 0.5
 offset = 0
 bg = pygame.image.load('images/bg.jpeg').convert()
 rock = pygame.transform.scale(pygame.image.load('images/rock.png'), (30, 30)).convert_alpha()

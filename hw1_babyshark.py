@@ -1,0 +1,5 @@
+name = input("What is your name? ")
+print(name + " shark! Do do do do do do!")
+print(name + " shark! Do do do do do do!")
+print(name + " shark! Do do do do do do!")
+print(name.upper() + " SHARK!")
