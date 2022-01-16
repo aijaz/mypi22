@@ -34,14 +34,18 @@ def process_guess(guess, word):
 
 
 def run(word, max_guesses):
-
+    """
+    run the wordle game
+    :param word: the word to be guessed
+    :param max_guesses: the number of guesses you get
+    :return: the number of guesses you took to guess the word, if you did, None otherwise
+    """
     history = []
     num_guesses = 0
 
     while True:
-        if num_guesses > max_guesses:
-            print(f"Sorry, you have run out of guesses. The correct word is: {random_word}")
-            break
+        if num_guesses == max_guesses:
+            return None
 
         print("----------------------------------------")
 
@@ -52,22 +56,32 @@ def run(word, max_guesses):
 
         num_guesses += 1
         match, colors = process_guess(guess, word)
+        colors.insert(0, guess)
+        colors.insert(1, " ")
         history.append(colors)
 
         for item in history:
             print("".join(item))
 
         if match:
-            print("Correct!")
+            return num_guesses
 
 
 if __name__ == '__main__':
     with open("commonwords.txt") as f:
         words = f.read().splitlines()
 
-    five_letter_words = [word for word in words if len(word) == 5]
-    
-    random_index = random.randrange(0, len(five_letter_words))
-    random_word = five_letter_words[random_index].upper()
+    random_word = random.choice([word for word in words if len(word) == 5]).upper()
+    num_guesses = run(random_word, max_guesses=6)
+    if num_guesses is None:
+        print(f"Sorry, you have run out of guesses. The correct word is: {random_word}")
+        exit(1)
 
-    run('PANIC', max_guesses=6)
+    responses = ['Did you cheat?', 'Incredible!', 'Impressive', 'Not bad!', 'Nicely done!', 'Phew.']
+    if num_guesses <= 6:
+        print(responses[num_guesses - 1])
+    else:
+        print("Correct!")
+
+    exit(0)
+
