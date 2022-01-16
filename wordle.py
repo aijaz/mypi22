@@ -19,15 +19,15 @@ def process_guess(guess, word):
     for index, character in enumerate(characters):
         try:
             if word[index] == character:
-                colors.append("🟩")
-            elif character in random_word:
-                colors.append("🟧")
+                colors.append(0)
+            elif character in word:
+                colors.append(1)
                 match = False
             else:
-                colors.append("⬛")
+                colors.append(2)
                 match = False
         except IndexError:
-            colors.append("⬛")
+            colors.append(2)
             match = False
 
     return match, colors
@@ -42,6 +42,8 @@ def run(word, max_guesses):
     """
     history = []
     num_guesses = 0
+    guesses = []
+    blocks = ['🟩', '🟧', '⬛']
 
     while True:
         if num_guesses == max_guesses:
@@ -56,18 +58,18 @@ def run(word, max_guesses):
 
         num_guesses += 1
         match, colors = process_guess(guess, word)
-        colors.insert(0, guess)
-        colors.insert(1, " ")
         history.append(colors)
+        guesses.append(guess)
 
-        for item in history:
-            print("".join(item))
+        for index, item in enumerate(history):
+            converted_colors = [blocks[i] for i in item]
+            print(guesses[index] + " " + "".join(converted_colors))
 
         if match:
             return num_guesses
 
 
-if __name__ == '__main__':
+def run_game():
     with open("commonwords.txt") as f:
         words = f.read().splitlines()
 
@@ -85,3 +87,6 @@ if __name__ == '__main__':
 
     exit(0)
 
+
+if __name__ == '__main__':
+    run_game()
