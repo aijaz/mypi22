@@ -114,13 +114,6 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     
 ## Week 2: Introduction to Lists and Tuples
 
-#### Did not finish last week:
-* Using variables in strings: f strings
-* New lines in strings
-* Quotes in strings
-* Double and triple quoted strings 
-* Putting it all together
-
     ```python
     import pyttsx3
     what = input("What should I say? ")
@@ -197,21 +190,81 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * *Homework* 
     1. Make a list of your favorite sports in order of preference (most favorite first)
     2. Print the list
-    3. Print the list in reverse order
-    4. You learn about a new game called "7 tiles" and suddenly it's your favorite game. Modify the list so that this is new game is now in the first spot, with everything else moving down a spot
-    5. After a week, "7 tiles" moves to the second spot but the third most favorite game moves to the top spot. Modify the list accordingly. 
-    6. After another week, you get bored of "7 tiles altogether" and remove it from your list altogether. Everything else stays the same. Modify the list accordingly
-    7. In a few weeks we'll be making a downhill skiing game. In this game the player will have to ski  between obstacles. Each horizontal row across the slope has 15 spots. Each spot can either have an obstacle or be empty. The goal of the game is to have the player ski through the empty spots without hitting an obstacle. Each obstacle can be a rock or a snowman. You may use strings or integers to represent an obstacle or  an empty space. 
-        1. create a data structure for a row. 
-        2. Assuming each screen has 20 rows, create a data structure for a screen. 
-        3. Assuming each row has 3 obstacles, populate each row with obstacles placed at random locations. 
-        4. Print your data structure. 
-        5. [image:2C7C6F73-6F2D-4C70-BF73-83D43674D4AB-821-000003A618A42113/IMG_0003.jpeg]
-
+    3. You learn about a new game called "7 tiles" and suddenly it's your favorite game. Modify the list so that this is new game is now in the first spot, with everything else moving down a spot. Print the list.
+    4. After a week, "7 tiles" moves to the second spot but the third most favorite game moves to the top spot. Modify the list accordingly, and print the list.
+    5. After another week, you get bored of "7 tiles" and remove it from your list altogether. Everything else stays the same. Modify the list accordingly, and print the list.
+    6. Print the list in reverse order
+    7. I'm creating an Avatar Fandom page. I want to keep track of the following information for each character: Name, Nationality, Children, Bending. 
+        - Every character will have a name and nationality
+        - We will keep track of the names of the character's children (if any)
+        - Some characters may not have children
+        - Some characters will have a single bending power
+        - Some characters will have more than one bending power
+        - Some characters may not have any bending powers
+        - Design a data structure for this fandom page
+        - Populate your data structure using the data below
+        - Print the value of your data structure
+        - This is gonna take some thought, so spend some time on this assignment.
+        - Data:
+            + Name: Aang
+                + Nationality: Southern Air Temple
+                + Children: 
+                    * Bumi
+                    * Kya
+                    * Tenzin
+                + Bending: 
+                    * Air
+                    * Water
+                    * Earth
+                    * Fire
+                    * Energy
+            - Name: Katara
+                + Nationality: Southern Water Tribe
+                + Children:
+                    * Bumi
+                    * Kya
+                    * Tenzin
+                + Bending: 
+                    * Water
+                    * Blood
+            - Name: Sokka
+                + Nationality: Southern Water Tribe
+                + Children: None
+                + Bending: None
+            - Name: Toph Beifong
+                + Nationality: Gaoling, Earth Kingdom
+                + Children: 
+                    * Lin Beifong
+                    * Suyin Beifong
+                + Bending:
+                    * Earth
+                    * Metal
+            - Name: Zuko
+                + Nationality: Fire Nation Capital, Fire Nation
+                + Children: 
+                    * Izumi
+                    * Kya
+                + Bending:
+                    * Fire
+                    * Energy
+            - Name: Iroh
+                + Nationality: Fire Nation Capital, Fire Nation
+                + Children: 
+                    * Lu Ten
+                + Bending:
+                    * Fire
+                    * Energy
+            - Name: Zhao
+                + Nationality: Fire Nation Capital, Fire Nation
+                + Children: 
+                    * None
+                + Bending:
+                    * Fire
 
 ## Week 3. Working with Lists and Tuples
 
 * Homework review
+* Did you use a list or a tuple for children or bending? Why?
 * Looping through an entire list
 
     ```python
