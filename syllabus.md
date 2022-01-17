@@ -170,9 +170,9 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     * `things.remove('a thing')`
     * `l1.extend(l2)` 
 * Organizing a list
-    * Sort permanently with `sort`
-    * Get a sorted copy with `sorted()`
-    * Reversing a list with `reverse()`
+    * Sort permanently with `cars.sort()`
+    * Get a sorted copy with `sorted(cars)`
+    * Reversing a list with `cars.reverse()`
 * `n = len(things)` 
 * Tuples
     * Parens 
@@ -210,16 +210,6 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 
 
 ## Week 3. Working with Lists and Tuples
-
-#### Missed last week
-
-* Negative indexes
-* Organizing a list
-    * Sort permanently with `sort`
-    * Get a sorted copy with `sorted()`
-    * Reversing a list with `reverse()`
-
----
 
 * Homework review
 * Looping through an entire list
