@@ -477,6 +477,8 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     team == 'lAkERs'
     ```
 
+* Using "bulls" in team.lower()
+
 * Testing for inequality
 
     ```python
@@ -486,6 +488,10 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
     else:
         print("They're my favorite team, too!")
     ```
+
+* Why, then do we have == and != if computers are so stupid
+    - Because computers are good at numbers
+    
 
 * Testing numbers
 
@@ -527,8 +533,8 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 
         ```python
         age = input('How old are you?')
-        if age < 20 and age > 17: 
-            print("You are a teenaged adult.")
+        if age < 13 or age > 19: 
+            print("You're not a teenager.")
         ```
 
     - Use `and` if you want to check multiple conditions and want to all conditions to be True
