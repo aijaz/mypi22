@@ -629,7 +629,8 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * According to this page (https://en.wikipedia.org/wiki/List_of_landings_on_extraterrestrial_bodies) three other planets in our solar system (Mercury, Venus, and Mars) have human-made machines on their surface. Loop through the list of planets. If a planet has machines on their surface, print its name, along with "Yes." If it doesn't, print it's name, along with "Not yet."
 * Pretend your computer has a name. Ask the user for their name. If the name they enter is the same as the user's name, print "Hey! That's my name, too!". If not, print "That's a nice name." The comparison should be case-insensitive.
 * Store the numbers 1 through 9 in a list. Loop through the list, and print the appropriate number as well as the Elven translation of the number. You can find the Elven translations here: https://tolkiengateway.net/wiki/Quenya_numbers
-* Write a basic customer-support system. Ask the user "How can I help you?" If the user's reply contains the word "donate", then respond: "For donations, please contact Aijaz." If the users's reply contains the word "volunteer", then respond: "For volunteering, please contact Ayesha." If they user's reply contains neither "donate" or "volunteer" then respond with "I'm sorry. I don't understand."
+* Write a basic customer-support system. Ask the user "How can I help you?" If the user's reply contains the word "donate", then respond: "For donations, please contact Aijaz." If the users's reply contains the word "volunteer", then respond: "For volunteering, please contact Ayesha." If they user's reply contains neither "donate" or "volunteer" then respond with "I'm sorry. I don't understand." As always, the checks should be case-insensitive.
+* Ask the user to input a number from 1 to 8. Print the name of the planet that's that number in the solar system. For example, if the user inputs '3', then print "Earth." If the user enters a number greater than eight, then print "That's too high." If the user enters a number less than one, then print "That's too low."
 
 * 
 * 
@@ -644,10 +645,32 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 
 
 ## Week 5. Dictionaries
-* Creating dictionaries
-* Working with dictionaries
-* Looping through dictionaries
-* Nesting
+- Creating dictionaries
+    
+    ```python
+
+    ```
+
+- Why dictionaries are helpful
+    + Speed
+    + Programmer ease of use
+    + Example: _Avatar_ homework
+- Working with dictionaries
+    + Accessing values
+    + Adding new key-value pairs
+    + Creating empty dictionaries
+    + Modifying values
+    + Removing key-value pairs with `del`
+    + Using get instead of keyed access
+- Looping through dictionaries
+    + `items()`
+    + `keys()`
+    + Looping through keys in a particular order with `sorted()`
+    + `values()`
+- Nesting
+    + Going deeper with the _Avatar_ homework
+    + Could nest dictionaries or arrays, or anything else
+    + Example of dictionary inside a dictionary
 
 ## Week 6. Loops
 * While Loops
