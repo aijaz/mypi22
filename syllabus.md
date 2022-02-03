@@ -503,6 +503,8 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
         print("You're still a child.")
     ```
 
+* Debugging - Using `int()` to accept numerical input
+
 * Testing multiple conditions
 
     ```python
@@ -631,18 +633,6 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Store the numbers 1 through 9 in a list. Loop through the list, and print the appropriate number as well as the Elven translation of the number. You can find the Elven translations here: https://tolkiengateway.net/wiki/Quenya_numbers
 * Write a basic customer-support system. Ask the user "How can I help you?" If the user's reply contains the word "donate", then respond: "For donations, please contact Aijaz." If the users's reply contains the word "volunteer", then respond: "For volunteering, please contact Ayesha." If they user's reply contains neither "donate" or "volunteer" then respond with "I'm sorry. I don't understand." As always, the checks should be case-insensitive.
 * Ask the user to input a number from 1 to 8. Print the name of the planet that's that number in the solar system. For example, if the user inputs '3', then print "Earth." If the user enters a number greater than eight, then print "That's too high." If the user enters a number less than one, then print "That's too low."
-
-* 
-* 
-* Let's expand on our game from a couple of weeks ago. 
-* Our screen will be 470 pixels wide and 620 pixels high.
-* To keep things neat we will have a 10 pixel padding on each end. So our hill will be 450 pixels wide and 600 pixels high.
-* In pygame the origin of the coordinate system is at the upper left-hand-side of the screen. This means that the hill is at coordinate (10, 10)
-* We will use an image to represent the rider and the flags. The image for the rider will be 30 pixels wide and 30 pixels high. The image for the flag will be 15 pixels wide and 30 pixels high.
-* To place any image on the screen we have to specify its bounding rectangle, or rect. There are many ways to specify a rect. The simplest is with a tuple of 4 elements: `(x, y, width, height)` where `x` and `y` represent the location of the upper left hand corner of the image.
-* Let's track the x location of the rider with a variable named `rider_x`
-* Write code to make sure that the rider stays on the hill and does not go too far off to the right or left. If the rider gets to the left edge of the hill, they can't go any further and stay there. Similarly, the rider cannot go off the right edge of the hill.
-
 
 ## Week 5. Dictionaries
 - Creating dictionaries
