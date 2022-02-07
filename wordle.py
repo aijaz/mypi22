@@ -33,9 +33,10 @@ def process_guess(guess, word):
     return match, colors
 
 
-def run(word, max_guesses):
+def run(word, max_guesses, word_length):
     """
     run the wordle game
+    :param word_length: word length
     :param word: the word to be guessed
     :param max_guesses: the number of guesses you get
     :return: the number of guesses you took to guess the word, if you did, None otherwise
@@ -52,8 +53,8 @@ def run(word, max_guesses):
         print("----------------------------------------")
 
         guess = input(f"Your Guess: ").upper()
-        if len(guess) != 5:
-            print("5-letter words only.")
+        if len(guess) != word_length:
+            print(f"{word_length}-letter words only.")
             continue
 
         num_guesses += 1
@@ -69,12 +70,23 @@ def run(word, max_guesses):
             return num_guesses
 
 
-def run_game():
+def read_dictionary():
     with open("commonwords.txt") as f:
         words = f.read().splitlines()
 
-    random_word = random.choice([word for word in words if len(word) == 5]).upper()
-    num_guesses = run(random_word, max_guesses=6)
+    return words
+
+
+def get_random_word(words, word_length):
+    return random.choice([word for word in words if len(word) == word_length]).upper()
+
+
+def run_game():
+    words = read_dictionary()
+    word_length = 5
+    random_word = "FRIED" # get_random_word(words, word_length)
+    num_guesses = run(random_word, max_guesses=word_length + 1, word_length=word_length)
+
     if num_guesses is None:
         print(f"Sorry, you have run out of guesses. The correct word is: {random_word}")
         exit(1)
