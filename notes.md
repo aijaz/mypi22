@@ -258,9 +258,106 @@ print(sports)
             + Bending:
                 * Fire
 
+```python
 data = [
     ['Aang', 'Southern Air Temple', ['Bumi', 'Kya', 'Tenzin'], ['Air', 'Water', 'Earth', 'Fire', 'Energy']],
     ['Katara', 'Southern Water Tribe', ['Bumi', 'Kya', 'Tenzin'], ['Water', 'Blood']],
+    ['Sokka', 'Southern Water Tribe', [], []], 
+    ['Toph Beifong', 'Gaoling, Earth Kingdom', ['Lin Beifong', 'Suyin Beifong'], ['Earth', 'Metal']],
+    ['Zuko', 'Fire Nation Capital, Fire Nation', ['Izumi', 'Kya'], ['Fire', 'Energy']],
+    ['Iroh', 'Fire Nation Capital, Fire Nation', ['Lu Ten'], ['Fire', 'Energy']],
+    ['Zhao', 'Fire Nation Capital, Fire Nation', [], ['Fire']]
 ]
-
 print(data)
+# Note: I'm using empty lists for children and bending
+# for Sokka, instead of None. If I used None, I would 
+# interpret that as "I don't know if Sokka has children
+# or bending skills". Using the empty lists implies: 
+# "I know he has 0 children and 0 bending skills"
+```
+
+# Working with Lists and Tuples
+
+- Looping through an entire list:
+
+    ```python
+    things = ['Raindrops', 'Whiskers', 'Kettles', 'Mittens', 'Packages']
+    for thing in things:
+        print(thing)
+        print(f"{thing} is one of my favorite things")
+    ```
+
+- Statements after a for loop
+
+    ```python
+    for person in ("Aijaz", "Adel", "Ayesha"):
+        print(f"Hello, {person}")
+        
+    print("It's good to meet all of you.")
+        
+    the_sum = 0
+    for n in (1, 2, 3, 4):
+        the_sum = the_sum + n
+        
+    print(f"The sum of the first 4 integers is {the_sum}")
+    ```
+
+- Making Numerical Lists
+    + Many reasons exist: games, measurements, etc.
+    + Range
+        * Two parameters: _start_at_ and _stop_before_
+        * Never includes the second parameter
+
+            ```python
+            s = 0
+            for v in range(1, 4):
+                s = s + v
+            
+            print(f"the sum of the first 3 integers is {s}")
+            
+            #################################################
+            
+            s = 0
+            n = 4
+            for v in range(1, n):
+                s = s + v
+            
+            print(f"the sum of the first {n - 1} integers is {s}")
+            
+            #################################################
+            
+            s = 0
+            n = 4
+            for v in range(1, n):
+                s += v
+            
+            print(f"the sum of the first {n - 1} integers is {s}")
+            ```
+
+        * `range` with 1 parameter
+
+            ```python
+            for n in range(5):
+                print(n)
+            ```
+
+        * `range` with 1 parameter - starts at 0, stops at parameter - Works well with list indexes
+
+            ```python
+            odds = [1, 3, 5, 7, 9]
+            for f in range(len(odds)):
+                print(odds[f] + 1)
+            ``` 
+
+        * `range` with 3 parameter: increment by parameter 3 instead of 1
+
+            ```python
+            for v in range(1, 10, 3):
+                print(v)
+            ```
+
+        * Using `range` to create lists
+
+            ```python
+            l = list(range(1, 10, 3))
+            ```
