@@ -44,6 +44,21 @@
 
 __Remember: If you can print it, it's an expression.__
 
+## Strings
+
+- Strings can be specified with `'single quotes'`, `"double quotes"`, or `"""triple quotes"""`
+- Triple-quoted strings can span multiple lines, like this:
+
+    ```python
+    poem = """Roses are red,
+    I think I am smitten
+    Not by Leo
+    But this adorable kitten."""
+    ```
+
+- If you want to 
+
+
 ## Functions
 
 - Functions are commands that do things
