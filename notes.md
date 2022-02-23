@@ -112,6 +112,18 @@ __Remember: If you can print it, it's an expression.__
     print(name)
     ```
 
+# Week 1 Homework:
+
+This is week 1's homework:
+
+    ```python
+    name = input("What is your name? ")
+    print(name + " shark! Do do do do do do!")
+    print(name + " shark! Do do do do do do!")
+    print(name + " shark! Do do do do do do!")
+    print(name.upper() + " SHARK!")    
+    ```
+
 # Lists
 
 - Lists are ordered collections of things.
@@ -148,4 +160,11 @@ __Remember: If you can print it, it's an expression.__
     + Sort permanently with `cars.sort()`
     + Get a sorted copy with `sorted(cars)`
     + Reverse a list with `cars.reverse()`
+- Tuples
+    + Tuples are comma-separated values
+    + They can optionally have parentheses around them. 
+    + This makes them look like lists
+    + Unlike lists, however, you cannot add or remove an item from a tuple. Nor can you change an item in a tuple.
+    + Tuples are useful for creating data structures (groups of things) that will never change.
 - Lists containing lists 
+    + Lists can contain lists
