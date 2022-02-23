@@ -35,3 +35,9 @@
             print(2 + 3)
             # The value of the expression being printed is 5
             ```
+
+- Operations can use parentheses, like in Math
+    
+    ```python
+    print(2 * (6 - 2))  # prints 8, not 14
+    ```
