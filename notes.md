@@ -116,13 +116,13 @@ __Remember: If you can print it, it's an expression.__
 
 This is week 1's homework:
 
-    ```python
-    name = input("What is your name? ")
-    print(name + " shark! Do do do do do do!")
-    print(name + " shark! Do do do do do do!")
-    print(name + " shark! Do do do do do do!")
-    print(name.upper() + " SHARK!")    
-    ```
+```python
+name = input("What is your name? ")
+print(name + " shark! Do do do do do do!")
+print(name + " shark! Do do do do do do!")
+print(name + " shark! Do do do do do do!")
+print(name.upper() + " SHARK!")    
+```
 
 # Lists
 
@@ -167,4 +167,100 @@ This is week 1's homework:
     + Unlike lists, however, you cannot add or remove an item from a tuple. Nor can you change an item in a tuple.
     + Tuples are useful for creating data structures (groups of things) that will never change.
 - Lists containing lists 
-    + Lists can contain lists
+    + Lists can contain lists e.g.: `l = [1, 3, 5, ["Book", "Pen", "Pencil"]]`
+
+# Week 2 Homework
+
+1. Make a list of your favorite sports in order of preference (most favorite first)
+2. Print the list
+3. You learn about a new game called "7 tiles" and suddenly it's your favorite game. Modify the list so that this is new game is now in the first spot, with everything else moving down a spot. Print the list.
+4. After a week, "7 tiles" moves to the second spot but the third most favorite game moves to the top spot. Modify the list accordingly, and print the list.
+5. After another week, you get bored of "7 tiles" and remove it from your list altogether. Everything else stays the same. Modify the list accordingly, and print the list.
+6. Print the list in reverse order
+
+```python
+sports = ['Soccer', 'Cricket', 'Tennis']
+print(sports)
+sports.insert(0, "7 tiles")
+print(sports)
+sports.insert(0, sports.pop(2))
+print(sports)
+sports.remove("7 tiles")
+print(sports)
+sports.reverse()
+print(sports)
+```
+
+7. I'm creating an Avatar Fandom page. I want to keep track of the following information for each character: Name, Nationality, Children, Bending. 
+    - Every character will have a name and nationality
+    - We will keep track of the names of the character's children (if any)
+    - Some characters may not have children
+    - Some characters will have a single bending power
+    - Some characters will have more than one bending power
+    - Some characters may not have any bending powers
+    - Design a data structure for this fandom page
+    - Populate your data structure using the data below
+    - Print the value of your data structure
+    - This is gonna take some thought, so spend some time on this assignment.
+    - Data:
+        + Name: Aang
+            + Nationality: Southern Air Temple
+            + Children: 
+                * Bumi
+                * Kya
+                * Tenzin
+            + Bending: 
+                * Air
+                * Water
+                * Earth
+                * Fire
+                * Energy
+        - Name: Katara
+            + Nationality: Southern Water Tribe
+            + Children:
+                * Bumi
+                * Kya
+                * Tenzin
+            + Bending: 
+                * Water
+                * Blood
+        - Name: Sokka
+            + Nationality: Southern Water Tribe
+            + Children: None
+            + Bending: None
+        - Name: Toph Beifong
+            + Nationality: Gaoling, Earth Kingdom
+            + Children: 
+                * Lin Beifong
+                * Suyin Beifong
+            + Bending:
+                * Earth
+                * Metal
+        - Name: Zuko
+            + Nationality: Fire Nation Capital, Fire Nation
+            + Children: 
+                * Izumi
+                * Kya
+            + Bending:
+                * Fire
+                * Energy
+        - Name: Iroh
+            + Nationality: Fire Nation Capital, Fire Nation
+            + Children: 
+                * Lu Ten
+            + Bending:
+                * Fire
+                * Energy
+        - Name: Zhao
+            + Nationality: Fire Nation Capital, Fire Nation
+            + Children: 
+                * None
+            + Bending:
+                * Fire
+
+data = [
+    ['Aang', 'Southern Air Temple', ['Bumi', 'Kya', 'Tenzin'], ['Air', 'Water', 'Earth', 'Fire', 'Energy']],
+    ['Katara', 'Southern Water Tribe', ['Bumi', 'Kya', 'Tenzin'], ['Water', 'Blood']],
+]
+
+print(data)
