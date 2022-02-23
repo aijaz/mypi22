@@ -512,3 +512,121 @@ num_planets = len(planets)
 for index in range(num_planets - 3, num_planets):
     print(f'Planet {planets[index]} has {num_moons[index]} moons')
 ```
+
+# Conditionals
+
+- `if` statements
+
+    ```python
+    team = input("What is your favorite NBA team?")
+    if team == "Bulls":
+        print("They're my favorite team, too!")
+    else:
+        print("They're not as good as the Bulls, NGL")
+    ```
+
+- Assignment vs Test for equality 
+
+    ```python
+    team = 'Bulls'     # this is used to set the value of team to 'Bulls'
+    team == 'Bulls'    # two equal signs are used to compare values. This is a Boolean expression
+    team == 'Nuggets'  # two equal signs are used to compare values. This is a Boolean expression
+    ```
+
+- Syntactic VS Semantic equality
+
+    ```python
+    team = 'Lakers'
+    team == 'Lakers'
+    team == 'lakers'
+    team.lower() 
+    team.lower() == 'lakers'
+    team = 'LAKERS'
+    team.lower() == 'lakers'
+    team = 'lAkERs'
+    team.lower() == 'lakers'
+    # use .lower() or .upper() or even .title() to compare strings case insensitively
+    ```
+
+- Testing for inequality
+
+    ```python
+    team = input("What is your favorite NBA team?")
+    if team != "Bulls":
+        print("They're not as good as the Bulls, NGL")
+    else:
+        print("They're my favorite team, too!")
+    ```
+
+- Testing numbers
+
+    ```python
+    age = input('How old are you?')
+    age = int(age) # convert the string to an integer
+    if age > 17:
+        print('You are an adult')
+    else: 
+        print("You're still a child.")
+    ```
+
+- Testing multiple conditions
+
+    ```python
+    age = int(input('How old are you?'))  # You can do this all in one statement
+    if age < 4: 
+        print("You're a baby")
+    elif age < 11:
+        print("You're a little kid")
+    elif age < 13:
+        print("You're a tween")
+    elif age < 18:
+        print("You're a teenager")
+    elif age < 20:
+        print("You're a teenaged adult")
+    else:
+        print("You're an adult")
+        
+    # no else block
+    
+    if age == 16:
+        print("You can drive now!")
+    elif age == 18:
+        print("You can vote now!")
+    ```
+
+- Checking multiple conditions
+    - Use `or` if you want to check multiple conditions and want to at least one condition to be True
+
+        ```python
+        age = input('How old are you?')
+        if age < 13 or age > 19: 
+            print("You're not a teenager.")
+        ```
+
+    - Use `and` if you want to check multiple conditions and want to all conditions to be True
+
+        ```python
+        age = input('How old are you?')
+        if age < 20 and age > 17: 
+            print("You are a teenaged adult.")
+        ```
+- Everything between the `if` and the `:` is called a Boolean expression
+- A boolean expression can be composed of other Boolean expressions (like we just saw with `or` and `and`)
+- Other boolean tests
+    + `"Feb" in ["Jan", "Feb", "Mar"]`
+    + `"Jun" in ["Jan", "Feb", "Mar"]`
+    + `"feb" not in ["Jan", "Feb", "Mar"]`
+    + `"ear" in "hearing"`
+    + `5 >= 4`
+- Describe the modulo operator (`%`)
+    + `5 % 3` has the value of the _remainder_ when you divide 5 by 3 (in this case: 2)
+    + if `x % y == 0` it means that `x` is a multiple of `y`
+    + this is often used to test if a number is odd or even. If that number % 2 is 0, then it is a multiple if 2. Which makes it even. Otherwise that number % 2 is 1, and that makes it odd.
+    + The value of `x % y` is always a number >= 0 and less than `y`
+- Knowing this, now you can also limit which items make it into a comprehension using a comprehension condition:
+
+    ```python
+    squares_of_evens = [x**2 for x in range(1,10) if x%2 == 0]
+    ```
+
+# Homework
