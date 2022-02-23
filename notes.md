@@ -361,3 +361,79 @@ print(data)
             ```python
             l = list(range(1, 10, 3))
             ```
+
+- Functions on lists
+    + `min()`
+    + `max()`
+    + `sum()`
+    + `len()`
+
+- List comprehensions
+    + Elegant shorthand for the creation of a new list and a `for` loop.
+
+        ```python
+        numbers = [1, 2, 3, 4, 5]
+        doubles = [x * 2 for x in numbers]
+        triples = [item * 3 for item in numbers]
+        halves = [item/2 for item in numbers]
+        ``` 
+
+    + You can also use ranges with list comprehensions
+
+        ```python
+        squares = [x**2 for x in range(1, 10)]
+        ```
+
+- List slices
+    + A slice is like a range for lists
+    + A slice returns a new list
+    
+        ```python
+        months =   ['Jan', 'Feb', 'Mar', 
+                    'Apr', 'May', 'Jun', 
+                    'Jul', 'Aug', 'Sep', 
+                    'Oct', 'Nov', 'Dec']
+        first_3 = months[0:3] # ['Jan', 'Feb', 'Mar']
+        q2 = months[3:6] # ['Apr', 'May', 'Jun']
+        ```
+    
+    + Omitting the first parameter implies it's 0
+    
+        ```python
+        months =   ['Jan', 'Feb', 'Mar', 
+                    'Apr', 'May', 'Jun', 
+                    'Jul', 'Aug', 'Sep', 
+                    'Oct', 'Nov', 'Dec']
+        first_third = months[:4] # ['Jan', 'Feb', 'Mar', 'Apr']
+        ```
+    
+    + Omitting the second parameter implies it's the last index + 1
+    
+        ```python
+        months =   ['Jan', 'Feb', 'Mar', 
+                    'Apr', 'May', 'Jun', 
+                    'Jul', 'Aug', 'Sep', 
+                    'Oct', 'Nov', 'Dec']
+        last_third = months[8:4] # ['Sep', 'Oct', 'Nov', 'Dec']
+        ```
+    
+    + Omitting both parameter implies indexes 0 and the last index + 1
+    
+        ```python
+        months =   ['Jan', 'Feb', 'Mar', 
+                    'Apr', 'May', 'Jun', 
+                    'Jul', 'Aug', 'Sep', 
+                    'Oct', 'Nov', 'Dec']
+        year = months[:]
+        ```
+    
+    + An index of -1 is the index of the last item
+    + An index of -2 is the second-last item, and so on
+    
+        ```python
+        months =   ['Jan', 'Feb', 'Mar', 
+                    'Apr', 'May', 'Jun', 
+                    'Jul', 'Aug', 'Sep', 
+                    'Oct', 'Nov', 'Dec']
+        p4 = months[-4:-1] # ['Sep', 'Oct', 'Nov']
+        ```
