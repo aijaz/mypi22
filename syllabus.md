@@ -574,18 +574,158 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Write a basic customer-support system. Ask the user "How can I help you?" If the user's reply contains the word "donate", then respond: "For donations, please contact Aijaz." If the users's reply contains the word "volunteer", then respond: "For volunteering, please contact Ayesha." If they user's reply contains neither "donate" or "volunteer" then respond with "I'm sorry. I don't understand." As always, the checks should be case-insensitive.
 * Ask the user to input a number from 1 to 8. Print the name of the planet that's that number in the solar system. For example, if the user inputs '3', then print "Earth." If the user enters a number greater than eight, then print "That's too high." If the user enters a number less than one, then print "That's too low."
 
-We're gonna start working on code that we'll use for in our wordle game. These homework questions are gonna be difficult. Please contact me if you're having difficulty with it. But all I ask is that you spend at least 30 minutes trying it out for yourself before coming to me for help.
+We're gonna start working on code that we'll use in our wordle game. These homework questions are gonna be difficult. Please contact me if you're having difficulty with it. But all I ask is that you spend at least 30 minutes trying it out for yourself before coming to me for help.
 
-* Ask the user to enter a word. If the word is not exactly five letters long, print "Invalid length". Hint: try using the len command.
+You may recall I said in class that everything after `in` in a phrase like `for f in ...` is an iterable. This means that it acts like a list. Strings are also iterables. 
 
-* Also for wordle: you may recall I said in class that everything after `in` in a phrase like `for f in ...` is an iterable. This means that it acts like a list. Strings are also iterables. Ask the user to input a word. Print a list where each item in the list is the uppercase character from the word. For example, if you enter the word 'ocean', the program should print ['O', 'C', 'E', 'A', 'N']
+* Ask the user to enter a word. If the word is not exactly five letters long, print "Invalid length". Hint: The `len` command works for lists. Would it work for other iterables like strings?
 
-* Ask the user to enter a word. Save that word into a variable (like you did in the previous problem). Then ask the user to enter a second word. Save that word into another variable. If both of the words are 5 characters long, then do the following: Create a list named result: For each letter in the second word, if the corresponding letter in the first word is the same, then append 'Y' to the result. If, however, the corresponding letter is not the same, but if the letter in the second word is somewhere in the first word, append '-' to the result. If the letter is not in the first word at all, append 'N' to the result. 
+* Also for wordle: Ask the user to input a word. Print a list where each item in the list is the uppercase character from the word. For example, if you enter the word 'ocean', the program should print ['O', 'C', 'E', 'A', 'N']
 
-For example, if the 1st word is 'ARENA' and the second word is 'RAINS', the result should be: ['-', '-', 'N', 'Y', 'N']
+* Ask the user to enter a word. Save that word into a variable (like you did in the previous problem). Then ask the user to enter a second word. Save that word into another variable. If both of the words are 5 characters long, then do the following: Create a list named `result`: For each letter in the second word, if the corresponding letter in the first word is the same, then append 'Y' to `result`. If, however, the corresponding letter is not the same, but if the letter in the second word is somewhere in the first word, append '-' to `result`. If the letter is not in the first word at all, append 'N' to `result`. Print `result`. All comparisons should be case-insensitive.
+
+For example, if the 1st word is 'ARENA' and the second word is 'RAINS', `result` should be: `['-', '-', 'N', 'Y', 'N']`.
+
+01234
+ARENA
+RAINS
 
 
+
+Examples of modulo:
+
+```python
+hours = int(seconds_input / 3600)
+minutes = int((seconds_input % 3600) / 60)
+min2 = int(seconds_input/60) % 60
+seconds = seconds_input % 60
+return f"{hours}:{minutes}({min2}):{seconds}"
+```
+
+And also for figuring out where something should go in a circular list
+
+
+## Review week
+
+- Lists are iterables
+- All iterables share some common functionality
+    + You can have them on the right hand side of a for loop
+        * `for n in [1, 2, 3, 4, 5]:`
+        * `for c in "Aijaz"`:
+    + You can call `len()` on them
+        * `len([1, 2, 3]) == 3`
+        * `len("You") == 3`
+    + You can check for containment
+        * You can see if something is "in" it
+        * `1 in [1, 2, 3, 4, 5]`
+        * `"e" in "Saturn"`
+    + You can index an iterable
+        * `my_list = [10, 20, 30, 40, 50]`
+        * `my_list[1]` (20)
+        * `my_name = "Inigo Montoya"`
+        * `my_name[3] == "g"`
+    + You can use slices on an iterable
+        * `my_list[:3] == [10, 20, 30]`
+        * `my_name[6:] == "Montoya"`
+- Conditional statements
+    + if
+    + Very useful
+    + Apples to Apple, Oranges to Oranges
+        * You can compare 
+            - strings to strings
+            - integers to integers
+            - indexes to indexes
+- You know how to iterate over lists and strings
+- You have seen how to create an empty list and add things to it over time:
+
+```python
+my_name = "Aijaz"
+list_of_characters = []
+for c in my_name:
+    list_of_characters.append(c)
+
+my_list = [1, 2, 3, 4, 5]
+result = []
+for n in my_list:
+    result.append(n*37)
+print(result)
+```
+
+
+
+
+## Week 7 Homework
+
+- Think about how the Wordle game works: We get 6 guesses to guess a random word that the computer has selected. Create a variable named `maximum_guesses` and set its value to 6. 
+- Create another variable name `number_of_guesses` and set its value to 0. (Every time the user guesses a word, `number_of_guesses` should be incremented by one. The value of `maximum_guesses` never changes.) 
+- Create another variable named `random_word`. Set its value to any 5-letter word, like "OCEAN", "STORM" or "AIJAZ" ;) 
+- In class we wrote a `while` loop that looked like this:
+
+    ```python
+    current_number = 0
+    while True:
+        current_number += 1
+        print(current_number)
+        if current_number == 7:
+            break
+            
+    print("Done!")
+    ```
+
+- Now write a similar `while` loop. Inside the loop you should ask the user to enter a word. 
+- Every time the user enters a word, you should do the following:
+    + Increment the `number_of_guesses`
+    + Compare the word the user entered to `random_word`. 
+    + If the word the user entered is the same as `random_word` then print "That's correct!" and exit the while loop. If not, continue on.
+    + If the word the user entered is not the same as `random_word` then print "That's wrong."
+    + If the user has run out of guesses, print "Sorry. You ran out of guesses. The word is " and `random_word`. Exit the loop. 
+    + If the user has not run out of guesses, then print "Try again."
     
+- We're gonna work on another game (in addition to Wordle). This is the popular game known as Boggle. Create a new file. On the first line of the file type in `import random`. We'll learn about the `import` command later. 
+- Create an empty list named `board`.
+- Create a list named `cubes` containing the following strings:
+    + `"AAEEGN"`
+    + `"ABBJOO"`
+    + `"ACHOPS"`
+    + `"AFFKPS"`
+    + `"AOOTTW"`
+    + `"CIMOTU"`
+    + `"DEILRX"`
+    + `"DELRVY"`
+    + `"DISTTY"`
+    + `"EEGHNW"`
+    + `"EEINSU"`
+    + `"EHRTVW"`
+    + `"EIOSST"`
+    + `"ELRTTY"`
+    + `"HIMNUQ"`
+    + `"HLNNRZ"`
+- Each of these strings represents a cube in Boggle. Loop through this list of strings
+    + For each string select a random letter from the string and add that letter to the list named `board`. See the following code for instructions on selecting a random letter:
+    
+        ```python
+        # To select a random element from an iterable, 
+        # use the function random.choice()
+        # For example, to select a random number from a list, 
+        # you can do something like the following:
+        random_number = random.choice([1, 3, 5, 7, 9, 10, 20, 30, 40, 50])
+
+        # Since strings are iterables as well, you can select
+        # a random character from a string the same way:
+        random_character = random.choice("OCEAN")
+
+        # This will randomly return O, C, E, A, or N.
+        ```
+
+- Print the list named `board`
+- Like you did with the Wordle homework above, write a while loop that runs forever. Inside the loop ask the user to enter a word.
+- Every time the user enters a word, you should do the following:
+    + If the word that the user enters is "Q", then exit the while loop. If not, continue on...
+    + Calculate the length of the word. If the word is less than 3 letter long, print "All words need be at least 3 letters long."
+    
+We'll continue with Boggle over the next few weeks, inshaAllah.
+
+
 ## While loops
 
 * Backbone of most software
