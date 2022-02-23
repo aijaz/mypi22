@@ -437,3 +437,78 @@ print(data)
                     'Oct', 'Nov', 'Dec']
         p4 = months[-4:-1] # ['Sep', 'Oct', 'Nov']
         ```
+
+# Homework:
+
+1. Create a data structure to represent a planet and it's confirmed number of moons. Create a list of these data structures. You can find the data on [Wikipedia](https://en.wikipedia.org/wiki/Planet#Planetary_attributes)
+2. Print the name of each planet along with its number of confirmed moons. 
+3. Print the total number of confirmed moons in the solar system. 
+4. For each of the the first 4 planets in the solar system, print the planet's name, and it's number of moons. Print the total number of moons for those 4 planets.
+5. For each of the the last 3 planets in the solar system, print the planet's name, and it's number of moons. Print the total number of moons for those 3 planets.
+6. Use a single Python statement no more than 80 characters long to generate a list of of the reciprocals of the first 1000 positive integers. (Remember: a positive integer is any whole number greater than 0, and the reciprocal of n is 1/n).
+
+```python
+# 1
+planets_and_moons = [
+    ('Mercury', 0),
+    ('Venus', 0),
+    ('Earth', 1),
+    ('Mars', 2),
+    ('Jupiter', 80),
+    ('Saturn', 83),
+    ('Uranus', 27),
+    ('Neptune', 14),
+]
+
+# 2
+total = 0
+for planet_name, number_of_moons in planets_and_moons:
+    print(f"{planet_name} has {number_of_moons} moons")
+    total += number_of_moons
+
+# 3
+print(f"The total number of confirmed moons in the solar system is {total}")
+
+# 4
+total = 0
+for planet_name, number_of_moons in planets_and_moons[:4]:
+    print(f"{planet_name} has {number_of_moons} moons")
+    total += number_of_moons
+
+print(f"The total number of confirmed moons for these planets is {total}")
+
+# 5
+total = 0
+for planet_name, number_of_moons in planets_and_moons[-3:]:
+    print(f"{planet_name} has {number_of_moons} moons")
+    total += number_of_moons
+
+print(f"The total number of confirmed moons for these planets is {total}")
+
+# 6
+print([1/x for x in range(1, 1001)])
+
+```
+
+## Alternate method (Aqsa's method)
+
+```python
+# 1
+planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+num_moons = [0, 0, 1, 2, 80, 83, 27, 14]
+
+# 2
+for index in range(len(planets)):
+    print(f'Planet {planets[index]} has {num_moons[index]} moons')
+
+# 3
+print(f'The total number of confirmed moons in the solar system is {sum(num_moons)}')
+
+# 4
+print(f'The total number of confirmed moons in the solar system is {sum(num_moons[:4])}')
+
+# 5
+num_planets = len(planets)
+for index in range(num_planets - 3, num_planets):
+    print(f'Planet {planets[index]} has {num_moons[index]} moons')
+```
