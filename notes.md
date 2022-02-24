@@ -438,7 +438,7 @@ print(data)
         p4 = months[-4:-1] # ['Sep', 'Oct', 'Nov']
         ```
 
-# Homework:
+# Week 4 Homework:
 
 1. Create a data structure to represent a planet and it's confirmed number of moons. Create a list of these data structures. You can find the data on [Wikipedia](https://en.wikipedia.org/wiki/Planet#Planetary_attributes)
 2. Print the name of each planet along with its number of confirmed moons. 
@@ -629,4 +629,114 @@ for index in range(num_planets - 3, num_planets):
     squares_of_evens = [x**2 for x in range(1,10) if x%2 == 0]
     ```
 
-# Homework
+# Week 5 Homework
+
+1. Continuing with last week's homework on the number of moons each planet has, print the names of the planets that more than 20 moons, as well as the number of moons they have. 
+2. According to this page (https://en.wikipedia.org/wiki/List_of_landings_on_extraterrestrial_bodies) three other planets in our solar system (Mercury, Venus, and Mars) have human-made machines on their surface. Loop through the list of planets. If a planet has machines on their surface, print its name, along with "Yes." If it doesn't, print it's name, along with "Not yet."
+3. Pretend your computer has a name. Ask the user for their name. If the name they enter is the same as the user's name, print "Hey! That's my name, too!". If not, print "That's a nice name." The comparison should be case-insensitive.
+4. Store the numbers 1 through 9 in a list. Loop through the list, and print the appropriate number as well as the Elven translation of the number. You can find the Elven translations here: https://tolkiengateway.net/wiki/Quenya_numbers
+5. Write a basic customer-support system. Ask the user "How can I help you?" If the user's reply contains the word "donate", then respond: "For donations, please contact Aijaz." If the users's reply contains the word "volunteer", then respond: "For volunteering, please contact Ayesha." If they user's reply contains neither "donate" or "volunteer" then respond with "I'm sorry. I don't understand." As always, the checks should be case-insensitive.
+6. Ask the user to input a number from 1 to 8. Print the name of the planet that's that number in the solar system. For example, if the user inputs '3', then print "Earth." If the user enters a number greater than eight, then print "That's too high." If the user enters a number less than one, then print "That's too low."
+
+```python
+planets_and_moons = [
+    ('Mercury', 0),
+    ('Venus', 0),
+    ('Earth', 1),
+    ('Mars', 2),
+    ('Jupiter', 80),
+    ('Saturn', 83),
+    ('Uranus', 27),
+    ('Neptune', 14),
+]
+
+# 1
+for planet, number_of_moons in planets_and_moons:
+    if number_of_moons > 20:
+        print(f"{planet} has {number_of_moons} moons")
+
+# or
+
+for planet in planets_and_moons:
+    planet_name, number_of_moons = planet
+    if number_of_moons > 20:
+        print(f"{planet} has {number_of_moons} moons")
+
+# or 
+
+print([(planet, number_of_moons) for planet, number_of_moons in planets_and_moons if number_of_moons > 20])
+
+# Another example of list comprehensions
+
+first_10_numbers = range(10)
+print([i for i in first_10_numbers if i > 5]) # prints [0, 1, 2, 4, 5]
+
+# 2
+for planet_name, number_of_moons in planets_and_moons:
+    if planet_name == 'Mercury' or planet_name == "Venus" or planet_name == "Mars":
+        print(planet_name + " YES")
+    else:
+        print(planet_name + " Not Yet")
+
+# 3
+computer_name = "Aijaz"
+your_name = input("What is your name? ")
+if your_name.lower() == computer_name.lower():
+    print("Hey! That's my name too!")
+else:
+    print("That's a nice name")
+
+# 4
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+for number in numbers:
+    if number == 1:
+        print("ONE")
+    elif number == 2:
+        print("TWO")
+    elif number == 9:
+        print("NINE")
+
+# or
+
+numbers = [(1, "ONE"), (2, "TWO"), (9, "NINE")]
+for number, translation in numbers:
+    print(f"{number} is translated to {translation} in Elven")
+
+# 5
+users_answer = input("How can I help you?")
+if users_answer.lower().strip() in ['donate', 'give']:
+    print("For donations, contact Aijaz")
+elif 'volunteer' in users_answer.lower():
+    print('For volunteering, contact Ayesha')
+else:
+    print("sorry, I don't understand")
+
+
+# 6
+number = int(input("Enter a number from to 8: "))
+if number < 1:
+    print("Too low")
+elif number > 8:
+    print("Too High")
+else:
+    planet_name, num_moons = planets_and_moons[number - 1] # note the - 1 here. Because we satrt from zero
+    print(planet_name)
+
+
+# Examples of boolean expressions
+True or False
+a == b
+a < b
+'donate' in users_answer
+something in LIST
+months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+print('january' in months)
+
+# Another example of an if statement
+for n in range(1000):
+    if n % 2 == 0 and n % 3 == 0 and n % 5 == 0 and n % 78 == 0:
+        print(n)
+
+# All this can be reduced to a single list comprehension:
+print([item for item in range(1000) if item % 2 == 0 and item % 3 == 0 and item % 5 == 0 and item % 78 == 0])
+```
