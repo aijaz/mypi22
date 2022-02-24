@@ -915,10 +915,10 @@ if len(word1) == 5 and len(word2) == 5:
 
 # Week 7 Homework
 
-- Think about how the Wordle game works: We get 6 guesses to guess a random word that the computer has selected. Create a variable named `maximum_guesses` and set its value to 6. 
-- Create another variable name `number_of_guesses` and set its value to 0. (Every time the user guesses a word, `number_of_guesses` should be incremented by one. The value of `maximum_guesses` never changes.) 
-- Create another variable named `random_word`. Set its value to any 5-letter word, like "OCEAN", "STORM" or "AIJAZ" ;) 
-- In class we wrote a `while` loop that looked like this:
+1. Think about how the Wordle game works: We get 6 guesses to guess a random word that the computer has selected. Create a variable named `maximum_guesses` and set its value to 6. 
+2. Create another variable name `number_of_guesses` and set its value to 0. (Every time the user guesses a word, `number_of_guesses` should be incremented by one. The value of `maximum_guesses` never changes.) 
+3. Create another variable named `random_word`. Set its value to any 5-letter word, like "OCEAN", "STORM" or "AIJAZ" ;) 
+4. In class we wrote a `while` loop that looked like this:
 
     ```python
     current_number = 0
@@ -931,8 +931,8 @@ if len(word1) == 5 and len(word2) == 5:
     print("Done!")
     ```
 
-- Now write a similar `while` loop. Inside the loop you should ask the user to enter a word. 
-- Every time the user enters a word, you should do the following:
+5. Now write a similar `while` loop. Inside the loop you should ask the user to enter a word. 
+6. Every time the user enters a word, you should do the following:
     + Increment the `number_of_guesses`
     + Compare the word the user entered to `random_word`. 
     + If the word the user entered is the same as `random_word` then print "That's correct!" and exit the while loop. If not, continue on.
@@ -940,9 +940,9 @@ if len(word1) == 5 and len(word2) == 5:
     + If the user has run out of guesses, print "Sorry. You ran out of guesses. The word is " and `random_word`. Exit the loop. 
     + If the user has not run out of guesses, then print "Try again."
     
-- We're gonna work on another game (in addition to Wordle). This is the popular game known as Boggle. Create a new file. On the first line of the file type in `import random`. We'll learn about the `import` command later. 
-- Create an empty list named `board`.
-- Create a list named `cubes` containing the following strings:
+7. We're gonna work on another game (in addition to Wordle). This is the popular game known as Boggle. Create a new file. On the first line of the file type in `import random`. We'll learn about the `import` command later. 
+8. Create an empty list named `board`.
+9. Create a list named `cubes` containing the following strings:
     + `"AAEEGN"`
     + `"ABBJOO"`
     + `"ACHOPS"`
@@ -959,7 +959,7 @@ if len(word1) == 5 and len(word2) == 5:
     + `"ELRTTY"`
     + `"HIMNUQ"`
     + `"HLNNRZ"`
-- Each of these strings represents a cube in Boggle. Loop through this list of strings
+10. Each of these strings represents a cube in Boggle. Loop through this list of strings
     + For each string select a random letter from the string and add that letter to the list named `board`. See the following code for instructions on selecting a random letter:
     
         ```python
@@ -976,9 +976,9 @@ if len(word1) == 5 and len(word2) == 5:
         # This will randomly return O, C, E, A, or N.
         ```
 
-- Print the list named `board`
-- Like you did with the Wordle homework above, write a while loop that runs forever. Inside the loop ask the user to enter a word.
-- Every time the user enters a word, you should do the following:
+11. Print the list named `board`
+12. Like you did with the Wordle homework above, write a while loop that runs forever. Inside the loop ask the user to enter a word.
+13. Every time the user enters a word, you should do the following:
     + If the word that the user enters is "Q", then exit the while loop. If not, continue on...
     + Calculate the length of the word. If the word is less than 3 letter long, print "All words need be at least 3 letters long."
     
