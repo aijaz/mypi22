@@ -886,7 +886,7 @@ if len(word1) == 5 and len(word2) == 5:
 
 ```
 
-# `while` loops
+# Loops
 
 - Use `while` loops to count up or down
 
