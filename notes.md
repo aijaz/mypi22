@@ -740,3 +740,65 @@ for n in range(1000):
 # All this can be reduced to a single list comprehension:
 print([item for item in range(1000) if item % 2 == 0 and item % 3 == 0 and item % 5 == 0 and item % 78 == 0])
 ```
+
+# Review Week
+
+- Lists are iterables
+- All iterables share some common functionality
+    + You can have them on the right hand side of a for loop
+        * `for n in [1, 2, 3, 4, 5]:`
+        * `for c in "Aijaz"`:
+    + You can call `len()` on them
+        * `len([1, 2, 3]) == 3`
+        * `len("You") == 3`
+    + You can check for containment
+        * You can see if something is "in" it
+        * `1 in [1, 2, 3, 4, 5]`
+        * `"e" in "Saturn"`
+    + You can index an iterable
+        * `my_list = [10, 20, 30, 40, 50]`
+        * `my_list[1]` (20)
+        * `my_name = "Inigo Montoya"`
+        * `my_name[3] == "g"`
+    + You can use slices on an iterable
+        * `my_list[:3] == [10, 20, 30]`
+        * `my_name[6:] == "Montoya"`
+- Conditional statements
+    + if
+    + Very useful
+    + Apples to Apple, Oranges to Oranges
+        * You can compare 
+            - strings to strings
+            - integers to integers
+            - indexes to indexes
+- You know how to iterate over lists and strings
+- You have seen how to create an empty list and add things to it over time:
+
+```python
+my_name = "Aijaz"
+list_of_characters = []
+for c in my_name:
+    list_of_characters.append(c)
+
+my_list = [1, 2, 3, 4, 5]
+result = []
+for n in my_list:
+    result.append(n*37)
+print(result)
+```
+
+# Week 6 Homework
+
+We're gonna start working on code that we'll use in our wordle game. These homework questions are gonna be difficult. Please contact me if you're having difficulty with it. But all I ask is that you spend at least 30 minutes trying it out for yourself before coming to me for help.
+
+You may recall I said in class that everything after `in` in a phrase like `for f in ...` is an iterable. This means that it acts like a list. Strings are also iterables. 
+
+1. Ask the user to enter a word. If the word is not exactly five letters long, print "Invalid length". Hint: The `len` command works for lists. Would it work for other iterables like strings?
+2. Also for wordle: Ask the user to input a word. Print a list where each item in the list is the uppercase character from the word. For example, if you enter the word 'ocean', the program should print ['O', 'C', 'E', 'A', 'N']
+3. Ask the user to enter a word. Save that word into a variable (like you did in the previous problem). Then ask the user to enter a second word. Save that word into another variable. If both of the words are 5 characters long, then do the following: Create a list named `result`: For each letter in the second word, if the corresponding letter in the first word is the same, then append 'Y' to `result`. If, however, the corresponding letter is not the same, but if the letter in the second word is somewhere in the first word, append '-' to `result`. If the letter is not in the first word at all, append 'N' to `result`. Print `result`. All comparisons should be case-insensitive.
+
+
+
+# While loops
+
+# Week 7 Homework
