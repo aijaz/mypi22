@@ -515,11 +515,11 @@ for index in range(num_planets - 3, num_planets):
 
 # Conditionals
 
-- `if` statements
+- Everything after an `if` is a Boolean expression (it evaluates to `True` or `False`)
 
     ```python
     team = input("What is your favorite NBA team?")
-    if team == "Bulls":
+    if team == "Bulls":  # notice 2 equal signs to compare values
         print("They're my favorite team, too!")
     else:
         print("They're not as good as the Bulls, NGL")
@@ -797,8 +797,190 @@ You may recall I said in class that everything after `in` in a phrase like `for 
 2. Also for wordle: Ask the user to input a word. Print a list where each item in the list is the uppercase character from the word. For example, if you enter the word 'ocean', the program should print ['O', 'C', 'E', 'A', 'N']
 3. Ask the user to enter a word. Save that word into a variable (like you did in the previous problem). Then ask the user to enter a second word. Save that word into another variable. If both of the words are 5 characters long, then do the following: Create a list named `result`: For each letter in the second word, if the corresponding letter in the first word is the same, then append 'Y' to `result`. If, however, the corresponding letter is not the same, but if the letter in the second word is somewhere in the first word, append '-' to `result`. If the letter is not in the first word at all, append 'N' to `result`. Print `result`. All comparisons should be case-insensitive.
 
+```python
 
+# 1
+word = input("Please enter a word: ")
+if len(word) != 5:
+    print("Invalid length")
 
-# While loops
+# 2 
+word = input("Please enter a word: ")
+my_list = []
+for character in word:
+    my_list.append(character.upper())
+
+print(my_list)
+
+# OR (Harraz's method. Better, IMO)
+word = input("Please enter a word: ")
+my_list = list(word.upper())
+print(my_list)
+
+# OR 
+# (Don't do this. This is ugly)
+print(list(input("Please enter a word: ").upper()))
+
+# OR
+word = input("Please enter a word: ")
+my_list1 = [character.upper() for character in word]
+print(my_list1)
+
+# OR
+my_list2 = []
+for character in word:
+    my_list2.append(character.upper())
+
+print(my_list2)
+
+# 3
+word1 = input("Please enter a word: ").upper()
+word2 = input("Please enter a second word: ").upper()
+if len(word1) == 5 and len(word2) == 5:
+    # Create a list named `result`:
+    result = []
+    # For each letter in the second word,
+    for i in range(5):
+        if word1[i] == word2[i]:
+            result.append('Y')
+        elif word2[i] in word1:
+            result.append('-')
+        else:
+            result.append('N')
+
+    print(result)
+
+# OR
+# You can use the zip command which you haven't learned yet.
+# zip is a function that takes 1 or more iterables 
+# and returns an iterable.
+# The iterable that zip returns is a tuple where each element
+# comes from each iterable that was passed in to zip
+for t in zip([1, 2, 3], [10, 20, 30]): 
+    print(t)
+# prints 
+# (1, 10)
+# (2, 20)
+# (3, 30)
+
+list(zip([1, 2, 3], [10, 20, 30])) 
+# returns [(1, 10), (2, 20), (3, 30)]
+
+list(zip([1, 2, 3], [10, 20, 30], ["A", "B", "C"])) 
+# returns [(1, 10, 'A'), (2, 20, 'B'), (3, 30, 'C')]
+
+# Coming back to our wordle example, you could do it using zip:
+word1 = input("Please enter a word: ").upper()
+word2 = input("Please enter a second word: ").upper()
+if len(word1) == 5 and len(word2) == 5:
+    # Create a list named `result`:
+    result = []
+    for c1, c2 in zip(word1, word2):
+        if c1 == c2:
+            result.append('Y')
+        elif c2 in word1:
+            result.append('-')
+        else:
+            result.append('N')
+    print(result)
+
+```
+
+# `while` loops
+
+- Use `while` loops to count up or down
+
+    ```python
+    current_number = 10
+    while current_number >= 0:
+        print(current_number)
+        current_number -= 1
+    print("Liftoff!")
+    ```
+
+- Just like `if`, everything after `while` is a Boolean expression. It evaluates to `True` or `False`.
+- Use `while True:` to create an infinite loop
+- `break` exits a loop
+
+    ```python
+    current_number = 1
+    while True:
+        print(current_number)
+        current_number += 1
+        if current_number == 7:
+            break
+            
+    print("Done!")
+    ```
 
 # Week 7 Homework
+
+- Think about how the Wordle game works: We get 6 guesses to guess a random word that the computer has selected. Create a variable named `maximum_guesses` and set its value to 6. 
+- Create another variable name `number_of_guesses` and set its value to 0. (Every time the user guesses a word, `number_of_guesses` should be incremented by one. The value of `maximum_guesses` never changes.) 
+- Create another variable named `random_word`. Set its value to any 5-letter word, like "OCEAN", "STORM" or "AIJAZ" ;) 
+- In class we wrote a `while` loop that looked like this:
+
+    ```python
+    current_number = 0
+    while True:
+        current_number += 1
+        print(current_number)
+        if current_number == 7:
+            break
+            
+    print("Done!")
+    ```
+
+- Now write a similar `while` loop. Inside the loop you should ask the user to enter a word. 
+- Every time the user enters a word, you should do the following:
+    + Increment the `number_of_guesses`
+    + Compare the word the user entered to `random_word`. 
+    + If the word the user entered is the same as `random_word` then print "That's correct!" and exit the while loop. If not, continue on.
+    + If the word the user entered is not the same as `random_word` then print "That's wrong."
+    + If the user has run out of guesses, print "Sorry. You ran out of guesses. The word is " and `random_word`. Exit the loop. 
+    + If the user has not run out of guesses, then print "Try again."
+    
+- We're gonna work on another game (in addition to Wordle). This is the popular game known as Boggle. Create a new file. On the first line of the file type in `import random`. We'll learn about the `import` command later. 
+- Create an empty list named `board`.
+- Create a list named `cubes` containing the following strings:
+    + `"AAEEGN"`
+    + `"ABBJOO"`
+    + `"ACHOPS"`
+    + `"AFFKPS"`
+    + `"AOOTTW"`
+    + `"CIMOTU"`
+    + `"DEILRX"`
+    + `"DELRVY"`
+    + `"DISTTY"`
+    + `"EEGHNW"`
+    + `"EEINSU"`
+    + `"EHRTVW"`
+    + `"EIOSST"`
+    + `"ELRTTY"`
+    + `"HIMNUQ"`
+    + `"HLNNRZ"`
+- Each of these strings represents a cube in Boggle. Loop through this list of strings
+    + For each string select a random letter from the string and add that letter to the list named `board`. See the following code for instructions on selecting a random letter:
+    
+        ```python
+        # To select a random element from an iterable, 
+        # use the function random.choice()
+        # For example, to select a random number from a list, 
+        # you can do something like the following:
+        random_number = random.choice([1, 3, 5, 7, 9, 10, 20, 30, 40, 50])
+
+        # Since strings are iterables as well, you can select
+        # a random character from a string the same way:
+        random_character = random.choice("OCEAN")
+
+        # This will randomly return O, C, E, A, or N.
+        ```
+
+- Print the list named `board`
+- Like you did with the Wordle homework above, write a while loop that runs forever. Inside the loop ask the user to enter a word.
+- Every time the user enters a word, you should do the following:
+    + If the word that the user enters is "Q", then exit the while loop. If not, continue on...
+    + Calculate the length of the word. If the word is less than 3 letter long, print "All words need be at least 3 letters long."
+    
+We'll continue with Boggle over the next few weeks, inshaAllah.
+

@@ -497,6 +497,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 
     ```python
     age = input('How old are you?')
+    age = int(age)
     if age > 17:
         print('You are an adult')
     else: 
@@ -508,7 +509,7 @@ We will be using [Python Crash Course, 2nd Edition](https://nostarch.com/pythonc
 * Testing multiple conditions
 
     ```python
-    age = input('How old are you?')
+    age = int(input('How old are you?'))
     if age < 4: 
         print("You're a baby")
     elif age < 11:
