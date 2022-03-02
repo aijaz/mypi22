@@ -913,6 +913,104 @@ if len(word1) == 5 and len(word2) == 5:
     print("Done!")
     ```
 
+- One way to print all numbers except 7
+
+    ```python
+    # All numbers from 1 to 10 except for 7
+    current_number = 1
+    while current_number <= 10:
+        if current_number != 7:
+            print(current_number)
+        current_number += 1
+    ```
+
+- Another way: Use `continue`, which causes Python to 'jump back' to the most recent loop test, ignoring everything that comes after it.
+
+    ```python
+    current_number = 0
+    while current_number < 10:
+        current_number += 1
+        if current_number == 7:
+            continue
+        print(current_number)
+    ```
+
+- Stepping through the loop
+
+    ```python
+    current_number = 0                                # cn
+    while current_number < 3:                         #  0   1    2
+        current_number += 1                           #  1   2    3
+        if current_number == 2:                       #  F   T    F
+            continue                                  #  -   Y    -
+        print(current_number)                         #  Y        Y
+    
+    # prints: 1 3
+    ```
+
+- Another example with `continue`: Remind yourself to have breakfast everyday except Mondays and Thursdays:
+
+    ```python
+    days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    for day in days:
+        if day == 'Mon' or day == 'Thu':
+            continue
+        print(f"Today is {day}. Don't forget to have breakfast.")
+    ```
+
+- A better test, in my opinion is to check if `day` is `in` a list:
+
+    ```python
+    days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    for day in days:
+        if day in ['Mon', 'Thu']:
+            continue
+        print(f"Today is {day}. Don't forget to have breakfast.")
+    ```
+
+- An example of `continue` going up to the most recent loop. (See the video for a description of this):
+
+    ```python
+    # a % b is the remainder of a / b
+    for n in range(1, 101):
+        if n % 15 == 0:
+            if n % 2 == 0:
+                continue
+            print(f"{n} is a multiple of 15")
+            for x in range(1, n+1):
+                if x % 7 == 0:
+                    if x % 2 == 0:
+                        continue
+                    print(f"   {x} is a multiple of 7")
+    ```    
+
+- Sometimes you need to iterate over an iterable with both - the value and the index of the current element. A naïve way is to do this:
+
+    ```python
+    days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    for n in range(len(days)):
+        print(f"{days[n]} is day {n+1}")
+    ```
+
+- A better way is to use `enumerate`, which returns a tuple of the index and the value:
+
+    ```python
+    days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    for n, day in enumerate(days):
+        print(f"{day} is day {n+1}")
+    ```
+
+- You can also use `zip` to pair up elements from two or more lists (as seen above):
+
+    ```python
+    days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    jours = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam']
+    dias = ['Dom', 'Lun', 'Mar', 'Mie', 'Jeu', 'Vie', 'Sab']
+    
+    for eng, french, spanish in zip(days, jours, dias):
+        print(f"The French word for {eng} is {french}, and the Spanish word is {spanish}")
+    ```
+
 # Week 7 Homework
 
 1. Think about how the Wordle game works: We get 6 guesses to guess a random word that the computer has selected. Create a variable named `maximum_guesses` and set its value to 6. 
@@ -984,3 +1082,80 @@ if len(word1) == 5 and len(word2) == 5:
     
 We'll continue with Boggle over the next few weeks, inshaAllah.
 
+# Dictionaries
+
+- A dictionary is a data structure composed of keys and values. Like a real dictionary, it's easy to find the value for a key in a dictionary.
+
+    ```python
+    d = {'card': 'a stiff piece of paper',
+         'duck': 'A bird that swims',
+         'elephant': 'A large mammal'}
+    
+    print(d)
+    
+    print(d['duck'])
+    print(d['elephant'])
+    print(d['frog'])  # This will throw an error
+    ```
+
+- We could use dictionaries to make our "Avatar, The Last Airbender" homework easier:
+
+    ```python
+    aang = {"name": "Aang",
+            "gender": 'M',
+            "nationality": "Southern Air Temple",
+            "children": [{'name': 'Bumi', 'gender': 'M'},
+                         {'name': 'Kya', 'gender': 'F'},
+                         {'name': 'Tenzin', 'gender': 'M'}]
+            }
+
+    # You can see above that values can be strings, or arrays, or any other type
+    # Keys are strings
+    
+    # creating an empty dictionary
+    katara = {}
+
+    # setting a value
+    katara['name'] = 'Katara'
+
+    # setting a value
+    katara['gender'] = 'F'
+
+    # setting a value
+    katara['nationality'] = "Southern Water Tribe"
+
+    # With lists, both values point to the same list 
+    # (like two people holding the same book)
+    katara['children'] = aang['children']
+
+    # If we change the name of one of Aang's children...    
+    aang["children"][1]['name'] = 'Kiya'
+    
+    # ... that also changes the name of one Katara's children
+    print(katara)
+
+    # deleting a key
+    del(katara['gender'])
+    print(katara)
+    print(aang)
+    del(aang['gender'])
+
+    # If you delete a field from every item (dictionary) of the list...
+    for child in aang['children']:
+        del(child['gender'])
+
+    # ... then that changes everywhere that list is referenced
+    print(aang)
+    print(katara)
+
+    # Use 'get' to retrieve a value and return a default value 
+    # (True in this case) if the key doesn't exist
+    # in the dictionary
+    print(katara.get('child', True))
+    uncle_iroh = {'name': 'Iroh', 'child': False}
+    print(uncle_iroh)
+    print(uncle_iroh.get('child', True))
+    toph = {'name': 'Toph Beifong', 'child': True}
+    print(toph.get('child', True))
+    print(katara['child'])
+    ```    
