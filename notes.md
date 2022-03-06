@@ -1278,7 +1278,7 @@ Keep in mind that we check for the word length before we check for the `q` then 
     print(len({"a": 1, "b": 2, "c": 3}))
     ```
 
-## Making our own functions
+## Making your own functions
 
 - You can make your own functions to do the same thing every time the function is invoked:
 
@@ -1348,3 +1348,4 @@ Keep in mind that we check for the word length before we check for the `q` then 
     ```
 
 
+# Week 9 Homework
