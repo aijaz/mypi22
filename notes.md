@@ -1159,3 +1159,82 @@ We'll continue with Boggle over the next few weeks, inshaAllah.
     print(toph.get('child', True))
     print(katara['child'])
     ```    
+
+# Boggle Homework (Part 1)
+
+```python
+import random
+
+board = []
+
+cubes = [
+    "AAEEGN", "ABBJOO", "ACHOPS", "AFFKPS",
+    "AOOTTW", "CIMOTU", "DEILRX", "DELRVY",
+    "DISTTY", "EEGHNW", "EEINSU", "EHRTVW",
+    "EIOSST", "ELRTTY", "HIMNUQ", "HLNNRZ"
+]
+
+for cube in cubes:
+    # For each string select a random letter from the string
+    # and add that letter to the list named board.
+    random_letter = random.choice(cube)
+    board.append(random_letter)
+
+print(board)
+
+while True:
+    word = input("Please enter a word: ")
+    if word.strip().upper() == 'Q':
+        # we call .strip() so that something like "  q  " is also accepted
+        # strip() strips leading and trailing spaces from a string
+        break
+    if len(word) < 3:
+        print("All words need to be at least three letters long.")
+        continue
+    print("Here we'll add the rest of the game logic")
+```
+
+Keep in mind that we check for the word length before we check for the `q` then we'll run into an infinite loop.
+
+# Iterating over Dictionaries
+
+- What if we try using a dictionary in a `for` loop.
+
+    ```python
+    d = {"name": "Aijaz", "city": "Thornton"}
+
+    for item in d:
+        print(item)
+    ```
+
+- This prints a list of all the keys. From this we can assume that a dictionary is an iterable.
+- Since a dictionary is an iterable, we can use it in list comprehensions: 
+
+    ```python
+    print([d[item].upper() for item in d])
+    print([item.upper() for item in d])    
+    ```
+
+- There are other ways to iterate over dictionaries:
+
+    ```python
+    # iterate over the list of values
+    for v in d.values():
+        print(v)       
+
+    # iterate over the list of keys
+    for k in d.keys():
+        print(k)       
+
+    # iterate over tuples of keys and values
+    for i in d.items():
+        k, v = i
+        print(f"The value of {k} is {v}")
+
+    # a more pythonic way of doing this is: 
+    for k, v in d.items():
+        print(f"The value of {k} is {v}")
+    
+
+    ```
+
