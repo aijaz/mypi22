@@ -1234,7 +1234,117 @@ Keep in mind that we check for the word length before we check for the `q` then 
     # a more pythonic way of doing this is: 
     for k, v in d.items():
         print(f"The value of {k} is {v}")
-    
 
     ```
+
+# Functions
+
+- A function is a command that tells the computer to do something. We started using functions in week 1 of this class. `print` is a function. 
+
+    ```python
+    # print can take a single argument or parameter. 
+    # The argument can be any expression: 
+    # For example, a string, an integer, a list, or a dictionary
+    print("Hello, world")
+    print(1)
+    print([1, 2, 3, 4])
+    print([i * 2 for i in [1, 2, 3, 4]])
+    print({"a": 1, "b": 2})
+
+    # print can also take multiple arguments. 
+    # If passed multiple arguments, it prints out each argument, 
+    # with a space in between them
+    print(1, 4)
+    print("Hello", "Aijaz")
+    my_name = "Aijaz"
+    print("My name is", my_name)
+
+    # print can also be used with more than 2 arguments
+    print(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    ```
+
+- Some functions have return values. A return value is what the function call evaluates to: 
+
+    ```python
+    # The return value of the input function is what the user typed in
+    word = input("Please enter a word: ")
+    print(word)
+    print(word.upper())
+
+    # The return value of len is the length of the 
+    # iterable that is the parameter to the function.
+    print(len([1, 2, 3, 4, 5]))
+    print(len(word))
+    print(len({"a": 1, "b": 2, "c": 3}))
+    ```
+
+## Making our own functions
+
+- You can make your own functions to do the same thing every time the function is invoked:
+
+    ```python
+    def greet():
+        print("Hello.")
+        print("My name is Inigo Montoya.")
+        print("You killed my father.")
+        print("Prepare to die.")
+    
+    greet()
+    greet()
+    ```
+
+- You can make a function do different things based on the value of the argument(s) passed in:
+
+    ```python
+    def welcome(person_name):
+        print(f"Hello, {person_name}")
+        print("Do you like to drink coffee in the morning?")
+
+
+    welcome("Aijaz")
+    welcome("Wisall")
+    welcome("Aqsa")
+    ```
+
+- You can make a function return a value that's based on the argument(s) passed in:
+
+    ```python
+    def double(value):
+        return value * 2
+
+
+    print(double(3))
+    print(double(30))
+    print(double("Aijaz"))
+    ```
+
+- You can make functions that ensure that you don't have a typo n your calculations:
+
+    ```python
+    def pi():
+        return 3.14159
+    
+    
+    # This is a lot better than the 2 statements below - where there 
+    # is a typo in one of the values of pi
+    print(f"The area of a circle with a radius of 2 is {pi() * 2 * 2}")
+    print(f"The area of a circle with a radius of 4 is {pi() * 4 * 4}")
+    
+    # The typo in the second statement causes a miscalculation
+    print(f"The area of a circle with a radius of 2 is {3.14 * 2 * 2}")
+    print(f"The area of a circle with a radius of 4 is {3.41 * 4 * 4}")
+    ```
+
+- You can also create a function that takes in two paramenters and returns a value:
+
+    ```python
+    def add(v1, v2):
+        return v1 + v2
+
+
+    print(add(1, 2))
+    print(add("Hello", " world"))
+    print(add("Hello", add(" ", "world")))
+    ```
+
 
