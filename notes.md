@@ -1349,3 +1349,157 @@ Keep in mind that we check for the word length before we check for the `q` then 
 
 
 # Week 9 Homework
+
+In Week 6 you wrote code that prompted the user to enter two words. Then you would print out a list whose contents changed based on the what the user entered. If you remember, we saw two ways to do this: 
+
+```python
+
+word1 = input("Please enter a word: ").upper()
+word2 = input("Please enter a second word: ").upper()
+if len(word1) == 5 and len(word2) == 5:
+    # Create a list named `result`:
+    result = []
+    # For each letter in the second word,
+    for i in range(5):
+        if word1[i] == word2[i]:
+            result.append('Y')
+        elif word2[i] in word1:
+            result.append('-')
+        else:
+            result.append('N')
+
+    print(result)
+
+# OR
+
+word1 = input("Please enter a word: ").upper()
+word2 = input("Please enter a second word: ").upper()
+if len(word1) == 5 and len(word2) == 5:
+    # Create a list named `result`:
+    result = []
+    for c1, c2 in zip(word1, word2):
+        if c1 == c2:
+            result.append('Y')
+        elif c2 in word1:
+            result.append('-')
+        else:
+            result.append('N')
+    print(result)
+
+```
+
+- Create a new file named `wordleText.py`
+    + In that file create a function named `process_words` that takes two parameters: `secret_word` and `guess`
+    + Modify the code above and put it inside `process_words` so that:
+        * You use `secret_word` and `guess` instead of `word1` and `word2`. 
+        * Don't prompt the user for `word1` and `word2`. Use `secret_word` instead of `word1` and `guess` instead of `word2`.
+        * Don't print the list named `result`. 
+        * Instead, have the function return the list named `result`.
+    + You can test it this way. Add the following code after your definition of `procee_words`:
+    
+        ```python
+        test_data = [('OCEAN', 'COUNT'),
+                     ('OCEAN', 'ARISE'),
+                     ('TRILL', 'STUMP'),
+                     ('MITES', 'MIGHT'),
+                     ('STEAM', 'MATES'),
+                     ('STEAM', 'STUNG'),
+                     ('STEAL', 'STALE'),
+                     ('STEAM', 'STEAM'),
+                     ('ARISE', 'COUNT')]
+        for secret, guess in test_data:
+            print(f"{secret}/{guess} => {process_words(secret, guess)}")
+        ```
+
+    + If everything is correct, the program should print the following:
+
+        ```
+        OCEAN/COUNT => ['-', '-', 'N', '-', 'N']
+        OCEAN/ARISE => ['-', 'N', 'N', 'N', '-']
+        TRILL/STUMP => ['N', '-', 'N', 'N', 'N']
+        MITES/MIGHT => ['Y', 'Y', 'N', 'N', '-']
+        STEAM/MATES => ['-', '-', '-', '-', '-']
+        STEAM/STUNG => ['Y', 'Y', 'N', 'N', 'N']
+        STEAL/STALE => ['Y', 'Y', '-', '-', '-']
+        STEAM/STEAM => ['Y', 'Y', 'Y', 'Y', 'Y']
+        ARISE/COUNT => ['N', 'N', 'N', 'N', 'N']
+        ```
+
+- More functions
+    + Create a function named `apologize` that takes in two parameters: `person` and `reason`.
+        * It should print an aplogy to the person for the reason specified.
+        * For example, if you call `apologize("brother", "for pouring honey in your hair while you were sleeping")`, it should print `Dear brother. I'm sorry for pouring honey in your hair while you were sleeping`
+        * If you call `apologize("Mother", "I scribbled in your favorite book.")` it should print `Dear Mother. I'm sorry I scribbled in your favorite book`
+    + Create a function named `triple`. It should take one parameter and return the value of that parameter tripled. 
+        * For example, `print(triple(3))` should print `9`.
+        * For example, `print(triple("Well,"), "What do we have here?")` should print `Well, Well, Well, What do we have here?`.
+    + Create a function named `rot13` that takes one parameter named `string`
+        * Create a variable named `alphabet` that has the value `"abcdefghijklmnopqrstuvwxyz"`
+        * Create a variable named `answer` that has the value `""` (the empty string)
+        * Loop for every character `char` in `string`
+            - If the character (lower case) is not in `alphabet`, then set `answer` to `answer` + `char` and continue to the next iteration of the loop
+            - Create a variable named `index` that has the value of `alphabet.find(char.lower())`
+                + This means that `index` is the integer offset of the first occurrance of `char.lower()` in `alphabet`
+                + In other words if `char` is `a` or `A`, `index` is 0
+                + If `char` is `e` or `E`, `index` is 4, and so on
+            - Create a variable named `new_index` that's `index` + 13 with a wraparound back to 0, if `index` + 13 > 25
+                + If `char` is `a`, then new_index should be 13
+                + If `char` is `E`, then new_index should be 17
+                + If `char` is `m`, then new_index should be 25
+                + If `char` is `N`, then new_index should be 0. Why 0? Because we want to replace `n` with `a`, `o` with `b`, and so on.
+                    * HINT: This is what modulo (`%`) was invented for. Use this operator.
+            - Create a new variable named `rotated_char` that has the value of `alphabet[new_index]`
+            - If the character `char` is upper case, then add the upper case version of `rotated_char` to `answer`
+                + HINT: An easy way to check if a string is upper case is to call `.isUpper()`
+                    * `"a".isUpper()` is `False`
+                    * `"B".isUpper()` is `True`
+            - Else if `char` is not upper case, then add `char` to `answer`
+        * After your loop is over, print the value of `answer`
+        * Test out your function with the following python code: Each call should print a simple English sentence: 
+        
+            ```python
+            print(rot13("V yvxr gur Clguba cebtenzzvat ynathntr!"))
+            print(rot13("Nvwnm unf n jrveq frafr bs uhzbe, evtug?"))
+            print(rot13("Arire tbaan tvir lbh hc, arire tbaan yrg lbh qbja, arire tbaan eha nebhaq naq qrfreg lbh!"))
+            ```
+            
+- Boggle homework. 
+    + Last week I told you to make the variable named `board` a list: 
+
+        ```python
+        board = []
+        # ...
+        for cube in cubes:
+            # For each string select a random letter from the string
+            # and add that letter to the list named board.
+            random_letter = random.choice(cube)
+            board.append(random_letter)
+        ```    
+
+    + Since the Boggle board is two-dimensional, make `board` be a two-dimensional list – a list of lists. Think of `board` as a list of rows, where each row has 4 random letters. `board` will have 4 such rows, for a total of 16 random letters. You can pre-populate the list like this:
+
+        ```python
+        board = [[], [], [], []]
+        # ...
+        for cube in cubes:
+            # For each string select a random letter from the string
+            # and add that letter to the list named board.
+            random_letter = random.choice(cube)
+            # board.append(random_letter)
+        ```    
+
+    + Now, you can no longer use the line `board.append(random_letter)`, which I've commented out above. You can't use it, because you don't want to append the random letter to board, but to one of the lists that's an element of `board`. You will need to use a counter:
+        *  If `cube` is the first, second, third, or fourth cube, then you need to append `random_letter` to `board[0]`. 
+        *  If `cube` is the fifth, sixth, seventh, or eighth cube, then you need to append `random_letter` to `board[1]`. 
+        *  And so on.
+        *  Modify your code so that you append `random_letter` to the proper row in `board`.
+        *  Hints:
+            -  Recall that `enumerate`  gives you both an index and an item from a list. This can help here.
+            -  There is a python operator named `//` that does integer division
+                +  So: `0 // 4`, `1 // 4`, `2 // 4`, and `3 // 4` all have the value of 0
+                +  and `4 // 4`, `5 // 4`, `6 // 4`, and `7 // 4` all have the value of 1
+                +  and `8 // 4`, `9 // 4`, `10 // 4`, and `11 // 4` all have the value of 2
+                +  and `12 // 4`, `13 // 4`, `14 // 4`, and `15 // 4` all have the value of 3
+            - How can this fact help? 🤔
+    + Print `board` after you populate it correctly.
+
