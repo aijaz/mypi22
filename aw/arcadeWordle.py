@@ -90,8 +90,6 @@ class Wordle(arcade.Window):
 
 
     def on_update(self, delta_time: float):
-        found_cell = False
-        zero_cells = [cell for cell in self.jump_cells if cell.jump_state == 0]
         for cell in self.jump_cells:
             if cell.jump_state == 0:
                 cell.jump_state = 1
@@ -123,7 +121,13 @@ class Wordle(arcade.Window):
         keys = arcade.get_sprites_at_point((x, y), sprite_list=self.keys)
         if keys:
             key = keys[0]
-            self.process_character(key.char)
+            char = key.char
+            if char == '⌫':
+                self.handle_backspace()
+            elif char == '⏎':
+                self.handle_return()
+            else:
+                self.process_character(char)
 
     def shake(self):
         for cell in self.cells[self.current_guess_number]:
@@ -176,31 +180,42 @@ class Wordle(arcade.Window):
         self.keys = arcade.SpriteList()
         key_width = 36
         key_height = 60
-        start_x = 130
+        start_x = 100
+        delta_x = 8
+        delta_y = 8
 
         location = Point(x=start_x, y=300)
         for char in "QWERTYUIOP":
             sprite = Key(char, location)
             self.keys_by_char[char] = sprite
             self.keys.append(sprite)
-            location.x += key_width + 2
+            location.x += key_width + delta_x
 
         location.x = start_x
-        location.y -= (key_height + 2)
+        location.y -= (key_height + delta_y)
         location.x += key_width/2
         for char in "ASDFGHJKL":
             sprite = Key(char, location)
             self.keys_by_char[char] = sprite
             self.keys.append(sprite)
-            location.x += key_width + 2
+            location.x += key_width + delta_x
 
-        location.x = start_x + key_width + 2 + key_width/2
-        location.y -= (key_height + 2)
+        location.x = start_x + key_width + delta_x + key_width/2
+        location.y -= (key_height + delta_y)
         for char in "ZXCVBNM":
             sprite = Key(char, location)
             self.keys_by_char[char] = sprite
             self.keys.append(sprite)
-            location.x += key_width + 2
+            location.x += key_width + delta_x
+
+        location.x += 9
+        sprite = Key("⌫", location)
+        self.keys.append(sprite)
+
+        location.x = start_x + key_width - 27
+        sprite = Key("⏎", location)
+        self.keys.append(sprite)
+
 
     def jump(self):
         self.jump_cells = self.cells[self.current_guess_number]
@@ -290,7 +305,20 @@ class Cell(arcade.Sprite):
 class Key(arcade.Sprite):
     def __init__(self, char, location):
         super().__init__()
+        self.center_x = location.x
+        self.center_y = location.y
         self.char = char.upper()
+        if char == "⌫":
+            backspace = os.path.join("images", "keys", "backspace.png")
+            self.textures.append(arcade.load_texture(backspace))
+            self.set_texture(0)
+            return
+        elif char == "⏎":
+            enter = os.path.join("images", "keys", "enter.png")
+            self.textures.append(arcade.load_texture(enter))
+            self.set_texture(0)
+            return
+
         light_gray = os.path.join("images", "keys", "light_gray", f"{self.char}.png")
         gray = os.path.join("images", "keys", "gray", f"{self.char}.png")
         yellow = os.path.join("images", "keys", "yellow", f"{self.char}.png")
@@ -301,8 +329,6 @@ class Key(arcade.Sprite):
         self.textures.append(arcade.load_texture(green))
         self.set_texture(0)
         self.current_texture_index = 0
-        self.center_x = location.x
-        self.center_y = location.y
 
     def set_color(self, result_status):
         if result_status == 'Y':
