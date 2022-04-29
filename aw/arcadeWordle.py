@@ -180,7 +180,7 @@ class Wordle(arcade.Window):
         self.keys = arcade.SpriteList()
         key_width = 36
         key_height = 60
-        start_x = 100
+        start_x = 105
         delta_x = 8
         delta_y = 8
 
