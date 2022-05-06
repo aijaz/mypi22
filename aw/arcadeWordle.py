@@ -50,6 +50,31 @@ class Wordle(arcade.Window):
         self.show_word = False
         self.audio = False
 
+    def reset(self):
+        self.say("Reset")
+        self.current_guess = ""
+        self.current_guess_number = 0
+        self.game_over = False
+        self.secret_word = get_secret_word()
+        self.show_word = False
+        self.jump_cells = arcade.SpriteList()
+
+        for row in range(self.max_guesses):
+            for sprite in self.cells[row]:
+                sprite.char = ''
+                sprite.set_texture(0)
+                sprite.texture_index = 0
+                sprite.is_moving = False
+                sprite.direction_change = 0
+                sprite.is_growing = False
+                sprite.jump_state = 0
+                sprite.success_animation_complete = False
+
+
+        for key in self.keys:
+            key.set_texture(0)
+            key.current_texture_index = 0
+
     def line_audio(self, n):
         text = ""
         if n == -1:
@@ -140,6 +165,9 @@ class Wordle(arcade.Window):
             else:
                 self.audio = True
                 self.say("Audio On")
+            return
+        if symbol == arcade.key.R and modifiers & arcade.key.MOD_CTRL:
+            self.reset()
             return
         if modifiers:
             return
