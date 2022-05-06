@@ -1,6 +1,7 @@
 import arcade
 import os
 from wordle import process_words, get_secret_word
+import subprocess
 
 # Constants
 SCREEN_WIDTH = 600
@@ -47,6 +48,31 @@ class Wordle(arcade.Window):
         self.secret_word = get_secret_word()
         self.jump_cells = arcade.SpriteList()
         self.show_word = False
+        self.audio = False
+
+    def line_audio(self, n):
+        text = ""
+        if n == -1:
+            r = range(self.max_guesses)
+        else:
+            r = range(n, n+1)
+        for row in r:
+            for sprite in self.cells[row]:
+                text += sprite.char
+            text += ". "
+            for sprite in self.cells[row]:
+                if sprite.texture_index == 1:
+                    text += f"{sprite.char}. No. "
+                elif sprite.texture_index == 2:
+                    text += f"{sprite.char}. Move. "
+                elif sprite.texture_index == 3:
+                    text += f"{sprite.char}. Yes. "
+
+        return text
+
+    def say(self, text):
+        if text and self.audio:
+            subprocess.Popen(['python3', 'playSound.py', text])
 
     def create_cells(self):
         for g in range(self.max_guesses):
@@ -104,6 +130,20 @@ class Wordle(arcade.Window):
         self.keys.update()
 
     def on_key_release(self, symbol: int, modifiers: int):
+        if symbol == arcade.key.P and modifiers & arcade.key.MOD_CTRL:
+            self.play(self.line_audio(-1))
+            return
+        if symbol == arcade.key.A and modifiers & arcade.key.MOD_CTRL:
+            if self.audio:
+                self.say("Audio off")
+                self.audio = False
+            else:
+                self.audio = True
+                self.say("Audio On")
+            return
+        if modifiers:
+            return
+
         if self.game_over:
             return
 
@@ -135,14 +175,15 @@ class Wordle(arcade.Window):
 
     def handle_return(self):
 
-
         if len(self.current_guess) != 5:
             self.shake()
+            self.say("Too short.")
             return
 
         result = process_words(self.secret_word, self.current_guess)
         if result is None:
             self.shake()
+            self.say("Invalid word.")
             return
 
         # update the cells
@@ -152,6 +193,7 @@ class Wordle(arcade.Window):
 
         if self.current_guess == self.secret_word:
             self.jump()
+            self.say(f"{self.current_guess} is correct!")
             self.game_over = True
             return
 
@@ -161,6 +203,10 @@ class Wordle(arcade.Window):
         if self.current_guess_number == self.max_guesses:
             self.show_word = True
             self.game_over = True
+            letters = ". ".join(list(self.secret_word))
+            self.say(self.line_audio(self.current_guess_number - 1) + f" Game over. The word was {self.secret_word}. f{letters}")
+        else:
+            self.say(self.line_audio(self.current_guess_number - 1))
 
     def handle_backspace(self):
         guess_len = len(self.current_guess)
@@ -226,6 +272,7 @@ class Cell(arcade.Sprite):
         blank = os.path.join("images", "cells", "blank", "BLANK.png")
         self.append_texture(arcade.load_texture(blank))
         self.set_texture(0)
+        self.texture_index = 0
 
         self.location = location.clone()
         self.center_x = self.location.x
@@ -248,6 +295,7 @@ class Cell(arcade.Sprite):
         self.append_texture(arcade.load_texture(yellow))
         self.append_texture(arcade.load_texture(green))
         self.append_texture(arcade.load_texture(current))
+        self.texture_index = 4
         self.set_texture(4)
         self.is_growing = True
         self.scale = 0.2
@@ -259,13 +307,14 @@ class Cell(arcade.Sprite):
 
     def set_color(self, result_status):
         if result_status == 'current':
-            self.set_texture(4)
+            self.texture_index = 4
         elif result_status == 'Y':
-            self.set_texture(3)
+            self.texture_index = 3
         elif result_status == '-':
-            self.set_texture(2)
+            self.texture_index = 2
         else:
-            self.set_texture(1)
+            self.texture_index = 1
+        self.set_texture(self.texture_index)
 
     def update(self):
         if self.is_moving:
