@@ -99,6 +99,9 @@ class Wordle(arcade.Window):
         if text and self.audio:
             subprocess.Popen(['python3', 'playSound.py', text])
 
+    def play(self):
+        self.say(self.line_audio(-1))
+
     def create_cells(self):
         for g in range(self.max_guesses):
             self.cells.append(arcade.SpriteList())
@@ -156,7 +159,7 @@ class Wordle(arcade.Window):
 
     def on_key_release(self, symbol: int, modifiers: int):
         if symbol == arcade.key.P and modifiers & arcade.key.MOD_CTRL:
-            self.play(self.line_audio(-1))
+            self.play()
             return
         if symbol == arcade.key.A and modifiers & arcade.key.MOD_CTRL:
             if self.audio:
