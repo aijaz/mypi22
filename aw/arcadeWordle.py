@@ -2,6 +2,7 @@ import arcade
 import os
 from wordle import process_words, get_secret_word
 import subprocess
+import arcade.gui
 
 # Constants
 SCREEN_WIDTH = 600
@@ -49,6 +50,7 @@ class Wordle(arcade.Window):
         self.jump_cells = arcade.SpriteList()
         self.show_word = False
         self.audio = False
+
 
     def reset(self):
         self.say("Reset")
@@ -197,6 +199,8 @@ class Wordle(arcade.Window):
                 self.handle_backspace()
             elif char == '⏎':
                 self.handle_return()
+            elif char == '!':
+                self.reset()
             else:
                 self.process_character(char)
 
@@ -291,6 +295,11 @@ class Wordle(arcade.Window):
 
         location.x = start_x + key_width - 27
         sprite = Key("⏎", location)
+        self.keys.append(sprite)
+
+        location.x = SCREEN_WIDTH/2 + 0
+        location.y = 80
+        sprite = Key("!", location)
         self.keys.append(sprite)
 
 
@@ -398,6 +407,11 @@ class Key(arcade.Sprite):
             self.textures.append(arcade.load_texture(enter))
             self.set_texture(0)
             return
+        elif char == "!":
+            reset = os.path.join("images", "keys", "restart.png")
+            self.textures.append(arcade.load_texture(reset))
+            self.set_texture(0)
+            return
 
         light_gray = os.path.join("images", "keys", "light_gray", f"{self.char}.png")
         gray = os.path.join("images", "keys", "gray", f"{self.char}.png")
@@ -421,7 +435,6 @@ class Key(arcade.Sprite):
         if texture_index > self.current_texture_index:
             self.current_texture_index = texture_index
             self.set_texture(texture_index)
-
 
 
 # Main code entry point

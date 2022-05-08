@@ -24,7 +24,7 @@ for letter in letters:
     for dirname, bgcolor in key_bgs:
         img = Image.new('RGB', (36, 60), color="black")
         d = ImageDraw.Draw(img)
-        d.rounded_rectangle((0, 0, 36, 60), radius=12, fill=bgcolor)
+        d.rectangle((0, 0, 36, 60), fill=bgcolor)
         d.text((18, 34), letter, font=kfnt, fill=(255, 255, 255), align='center', anchor='mb')
 
         img.save(f'images/keys/{dirname}/{letter}.png')
@@ -37,15 +37,22 @@ img.save(f'images/cells/blank.png')
 
 img = Image.new('RGB', (54, 60), color="black")
 d = ImageDraw.Draw(img)
-d.rounded_rectangle((0, 0, 54, 60), radius=12, fill=(129, 131, 132))
+d.rectangle((0, 0, 54, 60), fill=(129, 131, 132))
 d.text((27, 34), "ENTER", font=kfnt, fill=(255, 255, 255), align='center', anchor='mb')
 img.save(f'images/keys/enter.png')
 
 img = Image.new('RGB', (54, 60), color="black")
 d = ImageDraw.Draw(img)
-d.rounded_rectangle((0, 0, 54, 60), radius=12, fill=(129, 131, 132))
+d.rectangle((0, 0, 54, 60), fill=(129, 131, 132))
 d.text((27, 34), "⌫", font=kfnt, fill=(255, 255, 255), align='center', anchor='mb')
 img.save(f'images/keys/backspace.png')
+
+
+img = Image.new('RGB', (80, 60), color="black")
+d = ImageDraw.Draw(img)
+d.rectangle((0, 0, 80, 60), fill=(151, 51, 51))
+d.text((40, 37), "RESTART", font=kfnt, fill=(255, 255, 255), align='center', anchor='mb')
+img.save(f'images/keys/restart.png')
 
 
 
