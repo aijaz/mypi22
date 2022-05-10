@@ -174,8 +174,6 @@ class Wordle(arcade.Window):
         if symbol == arcade.key.R and modifiers & arcade.key.MOD_CTRL:
             self.reset()
             return
-        if modifiers:
-            return
 
         if self.game_over:
             return
