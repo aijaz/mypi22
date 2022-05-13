@@ -11,6 +11,7 @@ SCREEN_TITLE = "Wordle"
 RADIUS = 150
 
 
+
 # Classes
 class Point():
     def __init__(self, x, y):
