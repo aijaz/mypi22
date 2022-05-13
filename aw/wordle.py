@@ -33,9 +33,7 @@ def process_words(secret_word, guess):
 
 
 def get_secret_word():
-    with open("allcommonwords.txt") as f:
+    with open("secretWords.txt") as f:
         words = f.read().splitlines()
 
-    common_five = [word for word in words if len(word) == 5]
-
-    return random.choice(common_five).upper()
+    return random.choice(words).upper()
